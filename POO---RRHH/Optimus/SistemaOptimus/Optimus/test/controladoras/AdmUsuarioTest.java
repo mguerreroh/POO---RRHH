@@ -4,7 +4,7 @@
  */
 package controladoras;
 
-import controladoras.AdmBitacora;
+import controladoras.AdmBitacoraTest;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
