@@ -4,6 +4,10 @@
  */
 package controladoras;
 
+import controladoras.AdmUsuarios;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
 /**
  *
  * @author mguerrero

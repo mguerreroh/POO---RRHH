@@ -4,10 +4,9 @@
  */
 package controladoras;
 
-import controladoras.AdmUsuarios;
+import controladoras.AdmBitacora;
 import org.junit.Test;
 import static org.junit.Assert.*;
-
 
 /**
  *
