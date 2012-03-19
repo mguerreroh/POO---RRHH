@@ -8,6 +8,6 @@ package controladoras;
  *
  * @author mguerrero
  */
-public class Admbitacora {
+public class AdmBitacora {
     
 }
