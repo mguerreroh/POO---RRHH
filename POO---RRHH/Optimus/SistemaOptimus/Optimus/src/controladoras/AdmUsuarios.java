@@ -18,7 +18,9 @@ public class AdmUsuarios {
     private ArrayList<Usuario> dbUsuarios = new ArrayList<Usuario>();
     
     private void simularTabla(){
-        //this.dbUsuarios.add("dni", "nombre", "apellidoPaterno", "apellidoMaterno","usuario", "password", "correo", "2010/01/01", "cargo", "codigoRol");
+        Date fingreso="01/01/2010".t;
+        this.dbUsuarios.add(new Usuario("dni", "nombre", "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", fingreso, "cargo", "codigoRol"));
+        this.dbUsuarios.add(new Usuario("dni", "nombre", "apellidoPaterno", "apellidoMaterno","usuario", "password", "correo", "01/01/2010", "cargo", "codigoRol"));
         //this.dbUsuarios.add("001", "Carlos", "Salinas", "Carbonel", "csalinas", "carsal11");
         //this.dbUsuarios.add("002", "Sandra", "Perez", "sanper", "sanper222");
         //this.dbUsuarios.add("003", "Jose", "Rabanal", "josrab", "josrab333");
