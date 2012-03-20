@@ -75,4 +75,6 @@ public class AdmUsuarioTest {
     public void siNoIngresaCodigoRolDebeDarError(){
         assertFalse(admUsuarios.validarCodigoRol(null));
     }
+    
+    //Faltan validaciones de Usuarios
 }
