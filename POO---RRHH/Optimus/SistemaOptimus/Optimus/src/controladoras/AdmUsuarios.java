@@ -4,9 +4,10 @@
  */
 package controladoras;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.lang.String;
-import java.text.SimpleDateFormat;
+import java.text.DateFormat;
 import modelos.Usuario;
 import java.util.Date;
 
@@ -19,12 +20,13 @@ public class AdmUsuarios {
     private ArrayList<Usuario> dbUsuarios = new ArrayList<Usuario>();
     
     private void simularTabla(){
-        this.dbUsuarios.add(new Usuario("dni", "nombre", "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo", "codigoRol"));
-        //this.dbUsuarios.add(new Usuario("dni", "nombre", "apellidoPaterno", "apellidoMaterno","usuario", "password", "correo", "01/01/2010", "cargo", "codigoRol"));
-        //this.dbUsuarios.add("001", "Carlos", "Salinas", "Carbonel", "csalinas", "carsal11");
-        //this.dbUsuarios.add("002", "Sandra", "Perez", "sanper", "sanper222");
-        //this.dbUsuarios.add("003", "Jose", "Rabanal", "josrab", "josrab333");
-        //this.dbUsuarios.add("004", "Gonzalo", "Gutierrez", "gongut", "gongut444");
+        Date fIngreso = new java.util.Date();
+        this.dbUsuarios.add(new Usuario("dni", "nombre"   , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo", "codigoRol"));
+        this.dbUsuarios.add(new Usuario("111", "Ricardo"  , "Giron"          , "S."             , "usuario", "password", "correo", null, "cargo", "codigoRol"));
+        this.dbUsuarios.add(new Usuario("222", "WOLFGANG" , "BOLDT "         , "apellidoMaterno", "usuario", "password", "correo", null, "cargo", "codigoRol"));
+        this.dbUsuarios.add(new Usuario("333", "Alex"     , "SEGOVIA "       , "apellidoMaterno", "usuario", "password", "correo", null, "cargo", "codigoRol"));
+        this.dbUsuarios.add(new Usuario("444", "Marcelino", "Guerrero"       , "apellidoMaterno", "usuario", "password", "correo", null, "cargo", "codigoRol"));
+        this.dbUsuarios.add(new Usuario("555", "Daniel"   , "Subauste"       , "apellidoMaterno", "usuario", "password", "correo", null, "cargo", "codigoRol"));
     }
     
     public boolean verificarUsuario(String user){
@@ -94,5 +96,14 @@ public class AdmUsuarios {
             return true;
         }
         return false;
+    }
+    
+    public Date convertirFecha(String fecha) throws ParseException {
+        //SimpleDateFormat formatoDeFecha = new SimpleDateFormat("dd-MM-yyyy");
+        DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM);
+        Date d1 = df.parse(fecha);
+        //Date d1 = new Date();
+        //System.out.println(df.format(d1));}
+        return d1;
     }
 }

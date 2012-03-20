@@ -85,6 +85,13 @@ public class AdmUsuarioTest {
     //
     @Test
     public void testear() throws ParseException{
+        System.out.println("Esta es una fecha de prueba" + admUsuarios.convertirFecha("28/01/2012"));
+        System.out.println("Esta es una fecha de prueba" + admUsuarios.convertirFecha("29/01/2012"));
+        System.out.println("Esta es una fecha de prueba" + admUsuarios.convertirFecha("30/01/2012"));
+    }
+    /*
+    @Test
+    public void testear() throws ParseException{
         //Calendar calendario = GregorianCalendar.getInstance();
         String fecha = "28-01-2012";
         //System.out.println(fecha);
@@ -94,6 +101,6 @@ public class AdmUsuarioTest {
         DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM);
         Date d = df.parse("28/01/2012");
         System.out.println(d);
-    }
+    }*/
     
 }
