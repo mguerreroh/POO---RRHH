@@ -4,8 +4,12 @@
  */
 package controladoras;
 
-import controladoras.AdmBitacoraTest;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import org.junit.Test;
+import java.lang.String;
+import java.text.DateFormat;
 import static org.junit.Assert.*;
 
 /**
@@ -79,5 +83,17 @@ public class AdmUsuarioTest {
     //Faltan validaciones de Usuarios
     //Actualizaciones para pruebas
     //
+    @Test
+    public void testear() throws ParseException{
+        //Calendar calendario = GregorianCalendar.getInstance();
+        String fecha = "28-01-2012";
+        //System.out.println(fecha);
+        SimpleDateFormat formatoDeFecha = new SimpleDateFormat("dd-MM-yyyy");
+        //System.out.println(formatoDeFecha.format(fecha));
+        System.out.println(formatoDeFecha.format(new Date()));
+        DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM);
+        Date d = df.parse("28/01/2012");
+        System.out.println(d);
+    }
     
 }
