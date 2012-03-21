@@ -27,6 +27,7 @@ public class AdmUsuarios {
         this.dbUsuarios.add(new Usuario("333", "Alex"     , "SEGOVIA "       , "apellidoMaterno", "usuario", "password", "correo", null, "cargo", "codigoRol"));
         this.dbUsuarios.add(new Usuario("444", "Marcelino", "Guerrero"       , "apellidoMaterno", "usuario", "password", "correo", null, "cargo", "codigoRol"));
         this.dbUsuarios.add(new Usuario("555", "Daniel"   , "Subauste"       , "apellidoMaterno", "usuario", "password", "correo", null, "cargo", "codigoRol"));
+        this.dbUsuarios.add(new Usuario("555", "Daniel"   , "Subauste"       , "apellidoMaterno", "usuario", "password", "correo", null, "cargo", "codigoRol"));
     }
     
     public boolean verificarUsuario(String user){
