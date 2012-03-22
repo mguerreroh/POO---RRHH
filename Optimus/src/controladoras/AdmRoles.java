@@ -20,7 +20,7 @@ public class AdmRoles {
         
         Boolean valido = false;
         
-        if(rol !=""){
+        if(!rol.equals("")){
             valido = true;
         }
         
@@ -31,7 +31,7 @@ public class AdmRoles {
         
         Boolean valido = false;
         
-        if(descrip !=""){
+        if(!descrip.equals("")){
             valido = true;
         }
         
