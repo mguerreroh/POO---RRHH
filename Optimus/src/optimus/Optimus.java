@@ -23,6 +23,7 @@ public class Optimus {
         nombreModulo = miModuloXRol.getModuloXRol("DECJUR").getNombre();
         
         System.out.println(nombreModulo);
+        System.out.println(miModuloXRol);
             
         }       
 }
