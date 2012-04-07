@@ -123,11 +123,11 @@
                                           <Component id="textField4" alignment="0" max="32767" attributes="0"/>
                                           <Component id="textField5" alignment="0" max="32767" attributes="0"/>
                                           <Component id="textField6" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="textField7" min="-2" pref="114" max="-2" attributes="0"/>
-                                          <Component id="textField8" min="-2" pref="212" max="-2" attributes="0"/>
                                           <Component id="textField11" alignment="0" max="32767" attributes="0"/>
                                           <Component id="textField12" alignment="0" max="32767" attributes="0"/>
                                           <Component id="textField13" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="textField7" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="textField8" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
