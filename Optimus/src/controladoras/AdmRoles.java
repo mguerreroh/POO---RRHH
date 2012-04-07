@@ -14,7 +14,7 @@ import modelos.ModuloXRol;
 public class AdmRoles {
     
     
-    private ModuloXRol objModuloxRol = new ModuloXRol();
+    private ModuloXRol objModuloxRol = new ModuloXRol("Prueba", "Prueba");
     
     public Boolean validaRol(String rol){
         

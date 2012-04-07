@@ -20,6 +20,11 @@ public class Rol {
 	private String codigoModulo = "ADMROL";
 	private String codigo;
 
+    public Rol(String nombre, String descrip) {
+        this.nombre = nombre;
+        this.descrip = descrip;
+    }
+
     public String getCodigo() {
         return codigo;
     }
