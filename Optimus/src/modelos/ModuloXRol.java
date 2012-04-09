@@ -48,5 +48,15 @@ public class ModuloXRol{
         }
         return objModulo;
     }
+    public void setPermisosModulo(){
+        for(Modulo objMod:arrObjModulo){
+            if(objMod.getCodigo().equals("DECJUR")){
+                objMod.setAcceso(true);
+                objMod.setAdiccionar(true);
+                objMod.setEditar(true);
+                objMod.setEliminar(false);
+            }
+        }
+    }
     
 }
