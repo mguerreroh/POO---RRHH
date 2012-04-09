@@ -36,6 +36,13 @@ public class AdmUsuarios {
         return false;
     }
     
+    public boolean vacioUsuario(String user){
+        if(user.trim().length() > 0){
+            return true;
+        }
+        return false;
+    }
+    
     /*<< - NOMBRE - >>*/
     public boolean verificarNombre(String nombre){
         if(nombre != null){

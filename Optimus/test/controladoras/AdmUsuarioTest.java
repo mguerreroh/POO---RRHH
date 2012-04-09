@@ -29,6 +29,12 @@ public class AdmUsuarioTest {
         assertFalse(admUsuarios.verificarUsuario(null));
         System.out.println("Usuario no debe estar vacio");
     }
+    @Test
+    public void siIngresoEspaciosEnElUsuarioMeDebeDarError(){
+        assertFalse(admUsuarios.vacioUsuario("    "));
+        System.out.println("Usuario no debe tener espacios en blanco");
+    }
+    
     
     @Test
     public void siNoingresoElNombreDebeDarError(){
