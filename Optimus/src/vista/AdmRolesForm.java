@@ -5,7 +5,7 @@
 package vista;
 
 import java.util.ArrayList;
-import modelos.ModuloXRol;
+
 
 /**
  *
@@ -16,7 +16,7 @@ public class AdmRolesForm extends javax.swing.JFrame {
     /**
      * Creates new form AdmRolesForm
      */
-    public static ArrayList<ModuloXRol> aModuloXRol = new ArrayList<ModuloXRol>();
+//    public static ArrayList<ModuloXRol> aModuloXRol = new ArrayList<ModuloXRol>();
     public AdmRolesForm() {
         initComponents();
     }
@@ -288,16 +288,16 @@ public class AdmRolesForm extends javax.swing.JFrame {
         
         nombre = txtNombre.getText();
         descripcion = edtDescripcion.getText();
-        aModuloXRol.add(new ModuloXRol(descripcion, nombre));
+//        aModuloXRol.add(new ModuloXRol(descripcion, nombre));
         
         
         limpiaCampos();
     }//GEN-LAST:event_cmdAdicionarActionPerformed
 
     private void cmdListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdListaActionPerformed
-        for(ModuloXRol oModuloXRol:aModuloXRol){
-            System.out.println(oModuloXRol.getNombreRol());
-            System.out.println(oModuloXRol.getDescripcionRol());
+//        for(ModuloXRol oModuloXRol:aModuloXRol){
+//            System.out.println(oModuloXRol.getNombreRol());
+//            System.out.println(oModuloXRol.getDescripcionRol());
         }
     }//GEN-LAST:event_cmdListaActionPerformed
 

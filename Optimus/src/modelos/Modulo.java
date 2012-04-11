@@ -15,16 +15,16 @@ package modelos;
 
 
 public class Modulo {
-	private String codigoModulo = "ADMROL";
-        private String codigo;
+	
+       
 	private String nombre;
 	private Boolean acceso;
 	private Boolean adiccionar;
 	private Boolean editar;
 	private Boolean eliminar;
 
-    public Modulo(String codigo, String nombre, Boolean acceso, Boolean adiccionar, Boolean editar, Boolean eliminar) {
-        this.codigo = codigo;
+    public Modulo( String nombre, Boolean acceso, Boolean adiccionar, Boolean editar, Boolean eliminar) {
+      
         this.nombre = nombre;
         this.acceso = acceso;
         this.adiccionar = adiccionar;
@@ -32,9 +32,7 @@ public class Modulo {
         this.eliminar = eliminar;
     }
 
-    public String getCodigoModulo() {
-        return codigoModulo;
-    }
+  
     
     public Boolean getAcceso() {
         return acceso;
@@ -51,15 +49,8 @@ public class Modulo {
     public void setAdiccionar(Boolean adiccionar) {
         this.adiccionar = adiccionar;
     }
-
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
-
+ 
+ 
     public Boolean getEditar() {
         return editar;
     }
@@ -84,6 +75,5 @@ public class Modulo {
         this.nombre = nombre;
     }
     
-    
-    
+      
 }
