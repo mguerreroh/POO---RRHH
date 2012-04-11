@@ -1,18 +1,25 @@
-
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package controladoras;
 
-import java.util.ArrayList;
-import java.util.List;
-import modelos.Rol;
-import modelos.TareasGenerales;
 import modelos.Usuario;
-import static org.junit.Assert.*;
+import modelos.Rol;
+import modelos.Carta;
+import java.util.ArrayList;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
-
-public class TareasGeneralesTest {
- AdmTareasGenerales objAdminTareasGenerales = null;
-   ArrayList<TareasGenerales> lstTareasGenerales = new ArrayList<TareasGenerales>();
+/**
+ *
+ * @author Juanfra
+ */
+public class AdminCartaTest {
+ AdminCarta objAdminCarta = null;
+   ArrayList<Carta> lstCarta = new ArrayList<Carta>();
   ArrayList<Usuario> users = new ArrayList<Usuario>();
   RolTest test= new RolTest();
 //       test.crearRol();
@@ -31,8 +38,11 @@ public  void creaUsers()
   
 
     @Test
-    public void testCrearTarea() {
-    
+    public void testCrearCarta() {
+
+         System.out.println("Test para Crear una Carta con su Detalle ");
+      System.out.println();
+        System.out.println();
        users.add(new Usuario("45074193", "Juan"   , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual )) ;  
        users.add(new Usuario("87074393", "Jose"   , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual )) ;
        users.add(new Usuario("67023343", "Pedro"   , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual )) ;
@@ -40,15 +50,23 @@ public  void creaUsers()
       
         Usuario resp=users.get(0);
         users.remove(0);
-        TareasGenerales tarea = new TareasGenerales(resp, "PROYECTO CONGA", "10/10/2012","Comentario", "EN PROCESO", users);
+        Carta tarea = new Carta(resp, "Carta Fianza 1", "10/10/2012","carta Nueva", "EN PROCESO", users,"00001",23.7,"Tipo1","111111");
          assertNotNull(tarea.getAsunto());
-         System.out.println("Asunto de Tarea  " +tarea.getAsunto());
+         System.out.println("Asunto de Carta  " +tarea.getAsunto());
          assertNotNull(tarea.getComentario());
-           System.out.println("Comentario de Tarea  " +tarea.getComentario());
+           System.out.println("Comentario de Carta  " +tarea.getComentario());
          assertNotNull(tarea.getStatus());
-           System.out.println("Estado de Tarea  " +tarea.getStatus());
+           System.out.println("Estado de Carta  " +tarea.getStatus());
+            assertNotNull(tarea.getStatus());
+           System.out.println("Tipo de Carta  " +tarea.getTipo());
+            assertNotNull(tarea.getStatus());
+           System.out.println("Nro Seleccion de Carta  " +tarea.getSeleccion());
+            assertNotNull(tarea.getStatus());
+           System.out.println("Estado de Carta  " +tarea.getStatus());
+            assertNotNull(tarea.getStatus());
+           System.out.println("Importe de Carta  " +tarea.getImporte());
          assertNotNull(tarea.getResponsable());      
-          System.out.println("Responsable de Tarea: " +tarea.getResponsable().getNombre());
+          System.out.println("Responsable de Carta: " +tarea.getResponsable().getNombre());
            
 //          assertNotNull(tarea.getInvitados());    
            System.out.println("Invitados: " +tarea.getInvitados().size());
@@ -64,7 +82,10 @@ public  void creaUsers()
     
     @Test
     public void TestAdmin() {
-        
+          System.out.println();
+            System.out.println();
+           System.out.println("Test de varias Cartas creadas ");
+             System.out.println();
        users.add(new Usuario("45074193", "Juan"   , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual )) ;  
        users.add(new Usuario("87074393", "Jose"   , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual )) ;
        users.add(new Usuario("67023343", "Pedro"   , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual )) ;
@@ -78,17 +99,16 @@ public  void creaUsers()
 //           llama a la clase controladora
 //   AdmTareasGenerales  objAdminTareasGenerales = new AdmTareasGenerales();
 //        
-        TareasGenerales tg1= new TareasGenerales(resp, "CREAR RESOLUCION MENSUAL", "10/10/2012","Comentario", "EN PROCESO", users);
-        lstTareasGenerales.add(tg1);
-       TareasGenerales tg2= new TareasGenerales(resp, "PROYECTO CONGA", "10/10/2012","Comentario", "EN PROCESO", users);
-         lstTareasGenerales.add(tg2);        
-          System.out.println("Tamano De la lista TareasGenerales " + lstTareasGenerales.size());
-        assertEquals(lstTareasGenerales.size(), 2);
+        Carta tg1= new Carta(resp, "CREAR RESOLUCION MENSUAL", "10/10/2012","Comentario", "EN PROCESO", users,"00003",23.7,"Tipo1","123111");
+        lstCarta.add(tg1);
+       Carta tg2= new Carta(resp, "PROYECTO CONGA", "10/10/2012","Comentario", "EN PROCESO", users,"00002",35.67,"Tipo1","112311");
+         lstCarta.add(tg2);        
+          System.out.println("Tamano De la lista Cartas Fianza " + lstCarta.size());
+        assertEquals(lstCarta.size(), 2);
 
-       assertEquals(lstTareasGenerales.get(0).getAsunto(), "CREAR RESOLUCION MENSUAL");
+       assertEquals(lstCarta.get(0).getAsunto(), "CREAR RESOLUCION MENSUAL");
         System.out.println("Datos agregados correctamente..");
         
         
     }
-    
 }
