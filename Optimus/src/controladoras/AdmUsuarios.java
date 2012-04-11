@@ -28,7 +28,7 @@ public class AdmUsuarios {
         this.dbUsuarios.add(new Usuario("444", "Marcelino", "Guerrero"       , "apellidoMaterno", "usuario", "password", "correo", null, "cargo", "codigoRol"));
         this.dbUsuarios.add(new Usuario("555", "Daniel"   , "Subauste"       , "apellidoMaterno", "usuario", "password", "correo", null, "cargo", "codigoRol"));
     }
-    
+    /*<< - USUARIO - >>*/
     public boolean verificarUsuario(String user){
         if(user != null){
             return true;
@@ -36,12 +36,22 @@ public class AdmUsuarios {
         return false;
     }
     
-    public boolean validarUsuario(String nombre){
+    public boolean vacioUsuario(String user){
+        if(user.trim().length() > 0){
+            return true;
+        }
+        return false;
+    }
+    
+    /*<< - NOMBRE - >>*/
+    public boolean verificarNombre(String nombre){
         if(nombre != null){
             return true;
         }
         return false;
     }
+    
+    /*<< - DNI - >>*/
     public boolean validarDNI(String dni){
         if(dni != null){
             return true;
@@ -49,6 +59,7 @@ public class AdmUsuarios {
         return false;
     }
     
+    /*<< - APELLIDO PATERNO - >>*/
     public boolean validarApellidoPaterno(String apePat){
         if (apePat != null){
             return true;
@@ -56,6 +67,7 @@ public class AdmUsuarios {
         return false;
     }
     
+    /*<< - APELLIDO MATERNO - >>*/
     public boolean validarApellidoMatermo(String apeMat){
         if (apeMat != null){
             return true;
@@ -63,6 +75,7 @@ public class AdmUsuarios {
         return false;
     }
     
+    /*<< - PASSWORD - >>*/
     public boolean validarPassword(String password){
         if (password != null){
             return true;
@@ -70,6 +83,7 @@ public class AdmUsuarios {
         return false;
     }
     
+    /*<< - CORREO - >>*/
     public boolean validarCorreo(String correo){
         if (correo != null){
             return true;
@@ -77,6 +91,7 @@ public class AdmUsuarios {
         return false;
     }
     
+    /*<< - FECHA - >>*/
     public boolean validarFecha(Date fIngreso){
         if (fIngreso != null){
             return true;
@@ -84,6 +99,7 @@ public class AdmUsuarios {
         return false;
     }
     
+    /*<< - CARGO - >>*/
     public boolean validarCargo(String cargo){
         if (cargo != null){
             return true;
@@ -91,6 +107,7 @@ public class AdmUsuarios {
         return false;
     }
     
+    /*<< - CODIGO ROL - >>*/
     public boolean validarCodigoRol(String codigoRol){
         if (codigoRol != null){
             return true;
@@ -98,6 +115,7 @@ public class AdmUsuarios {
         return false;
     }
     
+    /*<< -  - >>*/
     public Date convertirFecha(String fecha) throws ParseException {
         //SimpleDateFormat formatoDeFecha = new SimpleDateFormat("dd-MM-yyyy");
         DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM);

@@ -11,6 +11,7 @@ import org.junit.Test;
 import java.lang.String;
 import java.text.DateFormat;
 import static org.junit.Assert.*;
+import controladoras.AdmUsuarios;
 
 /**
  *
@@ -20,16 +21,24 @@ import static org.junit.Assert.*;
 public class AdmUsuarioTest {
     
     AdmUsuarios admUsuarios = new AdmUsuarios();
+    
+    //simularTabla();
 
     @Test
     public void siNoingresoElusuarioMeDebeDarError(){
         assertFalse(admUsuarios.verificarUsuario(null));
         System.out.println("Usuario no debe estar vacio");
     }
+    @Test
+    public void siIngresoEspaciosEnElUsuarioMeDebeDarError(){
+        assertFalse(admUsuarios.vacioUsuario("    "));
+        System.out.println("Usuario no debe tener espacios en blanco");
+    }
+    
     
     @Test
     public void siNoingresoElNombreDebeDarError(){
-        assertFalse(admUsuarios.validarUsuario(null));
+        assertFalse(admUsuarios.verificarNombre(null));
         System.out.println("El nombre no debe estar vacio");
     }
     
