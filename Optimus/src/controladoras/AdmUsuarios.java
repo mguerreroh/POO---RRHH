@@ -17,8 +17,11 @@ import java.util.Date;
  */
 public class AdmUsuarios {
     
-    private ArrayList<Usuario> dbUsuarios = new ArrayList<Usuario>();
-    
+    ArrayList<Usuario> dbUsuario;
+    Usuario objUsuarioEncontrado;
+        
+    //private ArrayList<Usuario> dbUsuarios = new ArrayList<Usuario>();
+    /*
     private void simularTabla(){
         Date fIngreso = new java.util.Date();
         this.dbUsuarios.add(new Usuario("dni", "nombre"   , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo", "codigoRol"));
@@ -27,7 +30,7 @@ public class AdmUsuarios {
         this.dbUsuarios.add(new Usuario("333", "Alex"     , "SEGOVIA "       , "apellidoMaterno", "usuario", "password", "correo", null, "cargo", "codigoRol"));
         this.dbUsuarios.add(new Usuario("444", "Marcelino", "Guerrero"       , "apellidoMaterno", "usuario", "password", "correo", null, "cargo", "codigoRol"));
         this.dbUsuarios.add(new Usuario("555", "Daniel"   , "Subauste"       , "apellidoMaterno", "usuario", "password", "correo", null, "cargo", "codigoRol"));
-    }
+    }*/
     /*<< - USUARIO - >>*/
     public boolean verificarUsuario(String user){
         if(user != null){
@@ -124,4 +127,25 @@ public class AdmUsuarios {
         //System.out.println(df.format(d1));}
         return d1;
     }
+    
+    public boolean buscaUsuario(String user){
+        boolean encuentra=false;        
+        for(Usuario unUsuario:dbUsuario){
+            if(unUsuario.getUsuario().equals(user)){
+                encuentra = true;
+                break;
+            }
+        }
+        return encuentra;
+   }
+    
+        public void DatosUsuarioBuscado(String user){
+        for(Usuario unUsuario:dbUsuario){
+            if(unUsuario.getUsuario().equals(user)){
+                //objUsuarioEncontrado = new Usuario(unUsuario.getDni(), unUsuario.getApellidoPaterno());
+                break;
+            }
+        }
+   }    
+}
 }

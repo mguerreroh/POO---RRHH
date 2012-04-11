@@ -15,12 +15,10 @@ import java.util.ArrayList;
 //
 
 public class Rol {
-	private String nombre;
-	private String descrip;
+    private String nombre;
+    private String descrip;
 	
-        private ArrayList<Modulo> Modulos = new ArrayList<Modulo>();
-   
-            
+    private ArrayList<Modulo> Modulos = new ArrayList<Modulo>();
 
     public Rol(String nombre, String descrip, ArrayList<Modulo> modulos) {
         this.nombre = nombre;
@@ -56,7 +54,4 @@ public class Rol {
         this.nombre = nombre;
     }
 
-  
-        
-        
 }
