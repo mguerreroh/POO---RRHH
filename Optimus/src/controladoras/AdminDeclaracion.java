@@ -23,7 +23,7 @@ public class AdminDeclaracion {
     // creo un objeto en el constructor
     public AdminDeclaracion() {
         
-          this.lstCartas.add(new Declaracion(null,"PROYECTO CONGA", "10/10/2012", "34567865", "EN PROCESO",null));
+////          this.lstCartas.add(new Declaracion(null,"PROYECTO CONGA", "10/10/2012", "34567865", "EN PROCESO",null));
      
     }
 

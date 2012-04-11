@@ -14,10 +14,15 @@ public class Declaracion {
     
     
       private Usuario responsable;
-
-   
-     
-    private String asunto;
+      private String Cargo;
+       private String Tipo;
+        private String fechaAsump;
+         private String fechaRef;
+    private String fechaDoc;
+     private String NroDoc;
+      private String Publicacion;
+private String asunto;
+  
     private String fechaVcmto;
     private String comentario;
     private String status;
@@ -27,17 +32,26 @@ public class Declaracion {
 
  public Declaracion(){}
 
-    public Declaracion(Usuario responsable, String asunto, String fechaVcmto, String comentario, String status, ArrayList<Usuario> users) {
+    public Declaracion(Usuario responsable, String asunto, String fechaVcmto, String comentario, String status, ArrayList<Usuario> users,String cargo,String doc,String publicacion,
+            String asump,String fdoc,String ref) {
         this.responsable = responsable;
-        this.asunto = asunto;
+        
+       
         this.fechaVcmto = fechaVcmto;
         this.comentario = comentario;
         this.status = status;
-//         for (int i=0; i<users.size();i++)
-//           {
-//       this.Invitados.add(users.get(i));
-//       }
-//     
+        this.Cargo= cargo;
+        this.NroDoc=doc;
+        this.Publicacion=publicacion;
+        this.fechaAsump=asump;
+        this.fechaDoc=fdoc;
+        this.fechaRef=ref;
+        this.asunto=asunto;
+         for (int i=0; i<users.size();i++)
+           {
+       this.Invitados.add(users.get(i));
+       }
+     
     }
     
     
@@ -45,9 +59,7 @@ public class Declaracion {
         return Invitados;
     }
 
-    public String getAsunto() {
-        return asunto;
-    }
+   
 
     public String getComentario() {
         return comentario;
@@ -69,10 +81,7 @@ public class Declaracion {
         this.Invitados = Invitados;
     }
 
-    public void setAsunto(String asunto) {
-        this.asunto = asunto;
-    }
-
+    
     public void setComentario(String comentario) {
         this.comentario = comentario;
     }
@@ -88,5 +97,68 @@ public class Declaracion {
     public void setStatus(String status) {
         this.status = status;
     }
-    
+      public String getCargo() {
+        return Cargo;
+    }
+
+    public void setCargo(String Cargo) {
+        this.Cargo = Cargo;
+    }
+
+    public void setNroDoc(String NroDoc) {
+        this.NroDoc = NroDoc;
+    }
+
+    public void setPublicacion(String Publicacion) {
+        this.Publicacion = Publicacion;
+    }
+
+    public void setTipo(String Tipo) {
+        this.Tipo = Tipo;
+    }
+
+    public void setAsunto(String asunto) {
+        this.asunto = asunto;
+    }
+
+    public void setFechaAsump(String fechaAsump) {
+        this.fechaAsump = fechaAsump;
+    }
+
+    public void setFechaDoc(String fechaDoc) {
+        this.fechaDoc = fechaDoc;
+    }
+
+    public void setFechaRef(String fechaRef) {
+        this.fechaRef = fechaRef;
+    }
+
+    public String getAsunto() {
+        return asunto;
+    }
+
+    public String getNroDoc() {
+        return NroDoc;
+    }
+
+    public String getPublicacion() {
+        return Publicacion;
+    }
+
+    public String getTipo() {
+        return Tipo;
+    }
+
+    public String getFechaAsump() {
+        return fechaAsump;
+    }
+
+    public String getFechaDoc() {
+        return fechaDoc;
+    }
+
+    public String getFechaRef() {
+        return fechaRef;
+    }
+  
 }

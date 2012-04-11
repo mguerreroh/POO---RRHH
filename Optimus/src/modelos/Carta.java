@@ -14,28 +14,57 @@ public class Carta {
     
     
     private Usuario responsable;
-     
+    private String codigo; 
     private String asunto;
     private String fechaVcmto;
     private String comentario;
     private String status;
+    private String Banco;
+     private String Tipo;
+     private double Importe;
+
+    public String getBanco() {
+        return Banco;
+    }
+
+    public String getTipo() {
+        return Tipo;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public double getImporte() {
+        return Importe;
+    }
+
+    public String getSeleccion() {
+        return Seleccion;
+    }
+     private String Seleccion;
 
    
       private ArrayList<Usuario> Invitados = new ArrayList<Usuario>();
 
  public Carta(){}
 
-    public Carta(Usuario responsable, String asunto, String fechaVcmto, String comentario, String status, ArrayList<Usuario> users) {
+    public Carta(Usuario responsable, String asunto, String fechaVcmto, String comentario, String status, ArrayList<Usuario> users,String banco, Double importe,String tipo, String seleccion) {
         this.responsable = responsable;
         this.asunto = asunto;
         this.fechaVcmto = fechaVcmto;
         this.comentario = comentario;
         this.status = status;
-//         for (int i=0; i<users.size();i++)
-//           {
-//       this.Invitados.add(users.get(i));
-//       }
-//     
+        this.Banco=banco;
+        this.Importe=importe;
+        this.Tipo=tipo;
+        this.Seleccion=seleccion;
+                
+         for (int i=0; i<users.size();i++)
+           {
+       this.Invitados.add(users.get(i));
+       }
+     
     }
     
     

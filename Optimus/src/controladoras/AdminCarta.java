@@ -22,7 +22,7 @@ public class AdminCarta {
     // creo un objeto en el constructor
     public AdminCarta() {
         
-          this.lstCartas.add(new Carta(null,"PROYECTO CONGA", "10/10/2012", "34567865", "EN PROCESO",null));
+//          this.lstCartas.add(new Carta(null,"PROYECTO CONGA", "10/10/2012", "34567865", "EN PROCESO",null));
      
     }
 
