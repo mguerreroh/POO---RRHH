@@ -4,6 +4,8 @@
  */
 package controladoras;
 
+import modelos.Rol;
+import modelos.Usuario;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -23,6 +25,16 @@ public class AdmUsuarioTest {
     AdmUsuarios admUsuarios = new AdmUsuarios();
     
     //simularTabla();
+    
+    @Test
+    public void CrearUsuario() {
+       RolTest test= new RolTest();
+       test.crearRol();
+       Rol rol_actual=test.getRolActual();
+               
+    Usuario user= new Usuario("45074193", "Juan"   , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual ) ;  
+    System.out.println("El nombre del Usuario es: "+user.getNombre());
+    }
 
     @Test
     public void siNoingresoElusuarioMeDebeDarError(){

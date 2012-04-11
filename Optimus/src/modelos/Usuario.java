@@ -20,10 +20,9 @@ public class Usuario {
     private String correo;
     private Date f_ingreso;
     private String cargo;
-    private String codigoRol;
-    private String codigoModulo="usuario";
+    private Rol rol_actual;
 
-    public Usuario(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String password, String correo, Date f_ingreso, String cargo, String codigoRol) {
+    public Usuario(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String password, String correo, Date f_ingreso, String cargo, Rol rol) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
@@ -33,7 +32,7 @@ public class Usuario {
         this.correo = correo;
         this.f_ingreso = f_ingreso;
         this.cargo = cargo;
-        this.codigoRol = codigoRol;
+        this.rol_actual=rol;
     }
 
     public String getApellidoMaterno() {
@@ -48,13 +47,14 @@ public class Usuario {
         return cargo;
     }
 
-    public String getCodigoModulo() {
-        return codigoModulo;
+   public Rol getRol_actual() {
+        return rol_actual;
     }
 
-    public String getCodigoRol() {
-        return codigoRol;
+    public void setRol_actual(Rol rol_actual) {
+        this.rol_actual = rol_actual;
     }
+    
 
     public String getCorreo() {
         return correo;
@@ -92,14 +92,7 @@ public class Usuario {
         this.cargo = cargo;
     }
 
-    public void setCodigoModulo(String codigoModulo) {
-        this.codigoModulo = codigoModulo;
-    }
-
-    public void setCodigoRol(String codigoRol) {
-        this.codigoRol = codigoRol;
-    }
-
+   
     public void setCorreo(String correo) {
         this.correo = correo;
     }
