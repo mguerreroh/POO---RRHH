@@ -55,22 +55,14 @@ public class AdmUsuarioTest {
         dbUsuario.add(new Usuario("09534044",  "Zadith", "Guerrero", "Cordova", "zguerrero", "zguerrero", "zguerrero@", null, "cargo", rol_actual));
         dbUsuario.add(new Usuario("09534045", "Ricardo", "Guerrero", "Cordova", "rguerrero", "rguerrero", "rguerrero@", null, "cargo", rol_actual));
         
-        for(Usuario unUsuario:dbUsuario){
-            System.out.println("XXXXXXXX Entra al FOR");
-            System.out.println("XXXXXXXX Nuestra al Usuario -->" + unUsuario.getUsuario());
-            if(unUsuario.getUsuario().equals("zguerrero")){
-                break;
-            }
-        }
+        String usuarioBuscar="zguerrero";
         
-        //AdmUsuarios objAdmUsuarios = new AdmUsuarios();
-        //if(objAdmUsuarios.buscaUsuario("zguerrero")){
-        //    objAdmUsuarios.DatosUsuarioBuscado("zguerrero");
-        //    System.out.println(objAdmUsuarios.getObjUsuarioEncontrado().getNombre());
-        //    System.out.println(objAdmUsuarios.getObjUsuarioEncontrado().getApellidoPaterno());
-        //    
-        //} else 
-        //    System.out.println("No se encontró el Usuario");
+        if (AdmUsuarios.buscaUsuario(usuarioBuscar, dbUsuario)){
+            System.out.println("El usuario " + usuarioBuscar + ", ya existe!!!!");
+        } else System.out.println("El usuario " + usuarioBuscar + ", no existe!!!!");
+        
+        String usuarioDatos="zguerrero";
+        
         //Fin Test con ArraydbUsuario
     }
 
