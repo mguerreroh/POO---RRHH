@@ -58,4 +58,17 @@ public class AdmRoles {
         return llOk;
     }
     
+    public boolean validaDescripcionRol(Rol unRol){
+        
+        //Valida que el Rol no tenga un nulo en la descripción o vacio
+        //recibe un objeto de tipo rol
+        
+        boolean llOk=true;
+        
+        if(unRol.getDescrip() == null || unRol.getDescrip().equals("")){
+                llOk = false;
+            }
+        
+        return llOk;
+    }
 }

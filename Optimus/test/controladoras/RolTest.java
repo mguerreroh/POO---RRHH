@@ -89,5 +89,19 @@ public class RolTest {
         
         assertTrue(controladoraRoles.validaEstadoRol(administrador));
    }
+
+   @Test
+   public void validaDescripcionRolNoSeaNuloOVacio(){
+        Modulos.add(Tarea);
+        Modulos.add(Declaracion);
+        Modulos.add(Carta);
+        Modulos.add(Admin);
+        
+        Rol administrador = new Rol("Admin","Rol de administrador",Modulos);
+        
+        AdmRoles controladoraRoles = new AdmRoles();
+        
+        assertTrue(controladoraRoles.validaDescripcionRol(administrador));
+   }
    
 }
