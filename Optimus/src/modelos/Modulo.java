@@ -32,8 +32,6 @@ public class Modulo {
         this.eliminar = eliminar;
     }
 
-  
-    
     public Boolean getAcceso() {
         return acceso;
     }

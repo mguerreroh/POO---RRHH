@@ -4,17 +4,26 @@
  */
 package controladoras;
 
-import modelos.Rol;
+
 import java.util.ArrayList;
 import modelos.Modulo;
 import org.junit.Test;
 import static org.junit.Assert.*;
-
+import modelos.Rol;
+import controladoras.AdmRoles;
 
 public class RolTest {
     
     private Rol rolActual;
 
+    Modulo Tarea = new Modulo("Tarea",false,true,true,true);
+    Modulo Declaracion = new Modulo("Declaracion",true,false,true,true);
+    Modulo Carta = new Modulo("Carta",true,true,false,true);
+    Modulo Admin = new Modulo("Admin",true,true,true,false); 
+   
+    ArrayList<Modulo> Modulos = new ArrayList<Modulo>();
+    
+    
     public Rol getRolActual() {
         return rolActual;
     }
@@ -26,18 +35,14 @@ public class RolTest {
    @Test
    public void crearRol()
    {
-    Modulo Tarea = new Modulo("Tarea",false,true,true,true);
-    Modulo Declaracion = new Modulo("Declaracion",true,false,true,true);
-    Modulo Carta = new Modulo("Carta",true,true,false,true);
-    Modulo Admin = new Modulo("Admin",true,true,true,false); 
-   
-    ArrayList<Modulo> Modulos = new ArrayList<Modulo>();
+
     Modulos.add(Tarea);
     Modulos.add(Declaracion);
     Modulos.add(Carta);
     Modulos.add(Admin);
    
    Rol administrador = new Rol("Admin","Rol de administrador",Modulos);
+   
    assertNotNull(administrador.getNombre());
    System.out.println("El nombre del Rol es: "+administrador.getNombre());
      
@@ -55,7 +60,34 @@ public class RolTest {
    this.rolActual=administrador;
   }
    
-   //@Test
+   @Test
+   public void nombreDelRolNoSeaNuloOVacio(){
    
+        Modulos.add(Tarea);
+        Modulos.add(Declaracion);
+        Modulos.add(Carta);
+        Modulos.add(Admin);
+        
+        Rol administrador = new Rol("Admin","Rol de administrador",Modulos);
+        
+        AdmRoles controladoraRoles = new AdmRoles();
+        
+        assertTrue(controladoraRoles.validaNombreRol(administrador));
+
+   }
+
+   @Test
+   public void permisosDelRolNoSeaNulo(){
+        Modulos.add(Tarea);
+        Modulos.add(Declaracion);
+        Modulos.add(Carta);
+        Modulos.add(Admin);
+        
+        Rol administrador = new Rol("Admin","Rol de administrador",Modulos);
+        
+        AdmRoles controladoraRoles = new AdmRoles();
+        
+        assertTrue(controladoraRoles.validaEstadoRol(administrador));
+   }
    
 }
