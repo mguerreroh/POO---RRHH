@@ -141,10 +141,32 @@ public class AdmUsuarios {
                 break;
             }
         }
-        return true;
+        return encuentra;
     }
     
-        public void DatosUsuarioBuscado(String user){
+    public static boolean DatosUsuarioBuscado(String usuario, ArrayList<Usuario> dbArray){
+        boolean encuentra=false;
+        for(Usuario unUsuario:dbArray){
+            if(unUsuario.getUsuario().equals(usuario)){
+                encuentra=true;
+                System.out.println("Usuario encontrado:");
+                System.out.println("------------------");
+                System.out.println("Nombre --> " + unUsuario.getNombre());
+                System.out.println("Ap. Paterno --> " + unUsuario.getApellidoPaterno());
+                System.out.println("Ap. Materno --> " + unUsuario.getApellidoMaterno());
+                System.out.println("Usuario --> " + unUsuario.getUsuario());
+                System.out.println("Password --> " + unUsuario.getPassword());
+                System.out.println("Correo --> " + unUsuario.getCorreo());
+                System.out.println("Fecha Ingreso --> " + unUsuario.getF_ingreso());
+                System.out.println("Cargo --> " + unUsuario.getCargo());
+                System.out.println("Rol --> " + unUsuario.getRol_actual());
+                break;
+            }
+        }
+        return encuentra;
+    }
+    
+    public void DatosUsuarioBuscado2(String user){
         for(Usuario unUsuario:dbUsuario){
             if(unUsuario.getUsuario().equals(user)){
                 objUsuarioEncontrado = new Usuario(unUsuario.getDni(), unUsuario.getNombre(), unUsuario.getApellidoPaterno(), 
