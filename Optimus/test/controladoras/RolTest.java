@@ -13,7 +13,14 @@ import static org.junit.Assert.*;
 
 public class RolTest {
     
+    private Rol rolActual;
+
+    public Rol getRolActual() {
+        return rolActual;
+    }
     public RolTest() {
+        
+        
     }
 
    @Test
@@ -45,7 +52,10 @@ public class RolTest {
               System.out.println("El permiso para eliminar  : "+administrador.getModulos().get(i).getEliminar().toString());
  
          }
-   
+   this.rolActual=administrador;
   }
+   
+   //@Test
+   
    
 }
