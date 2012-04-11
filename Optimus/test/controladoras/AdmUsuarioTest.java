@@ -4,6 +4,8 @@
  */
 package controladoras;
 
+import modelos.Rol;
+import modelos.Usuario;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -23,8 +25,34 @@ public class AdmUsuarioTest {
     AdmUsuarios admUsuarios = new AdmUsuarios();
     
     //simularTabla();
-
+    
     @Test
+    public void CrearUsuario() {
+       RolTest test= new RolTest();
+       test.crearRol();
+       Rol rol_actual=test.getRolActual();
+               
+    Usuario user1 = new Usuario("09534044", "Zadith", "Guerrero", "Cordova", "zguerrero", "zguerrero", "zguerrero@", null, "cargo", rol_actual );
+    System.out.println("El Nombre del Usuario es: "    + user1.getNombre());
+    System.out.println("El Ape. Pat. del Usuario es: " + user1.getApellidoPaterno());
+    System.out.println("El Ape. Mat. del Usuario es: " + user1.getApellidoMaterno());
+    System.out.println("El Usuario  del Usuario es: "  + user1.getUsuario());
+    System.out.println("El Password del Usuario es: "  + user1.getPassword());
+    System.out.println("El Correo del Usuario es: "    + user1.getCorreo());
+    System.out.println("El F.ingreso del Usuario es: " + user1.getF_ingreso());
+    System.out.println("El Cargo del Usuario es: "     + user1.getCargo());
+
+    Usuario user2 = new Usuario("09534044", "Ricardo", "Guerrero", "Cordova", "rguerrero", "rguerrero", "rguerrero@", null, "cargo", rol_actual );
+    System.out.println("El Nombre del Usuario es: "     + user2.getNombre());
+    System.out.println("El Ape. Pat. del Usuario es: "  + user2.getApellidoPaterno());
+    System.out.println("El Ape. Mat. del Usuario es: "  + user2.getApellidoMaterno());
+    System.out.println("El Usuario  del Usuario es: "   + user2.getUsuario());
+    System.out.println("El Password del Usuario es: "   + user2.getPassword());
+    System.out.println("El Correo del Usuario es: "     + user2.getCorreo());
+    System.out.println("El F.ingreso del Usuario es: "  + user2.getF_ingreso());
+    System.out.println("El Cargo del Usuario es: "      + user2.getCargo());
+    }
+
     public void siNoingresoElusuarioMeDebeDarError(){
         assertFalse(admUsuarios.verificarUsuario(null));
         System.out.println("Usuario no debe estar vacio");
@@ -34,8 +62,7 @@ public class AdmUsuarioTest {
         assertFalse(admUsuarios.vacioUsuario("    "));
         System.out.println("Usuario no debe tener espacios en blanco");
     }
-    
-    
+        
     @Test
     public void siNoingresoElNombreDebeDarError(){
         assertFalse(admUsuarios.verificarNombre(null));
