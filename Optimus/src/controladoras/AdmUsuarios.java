@@ -134,15 +134,17 @@ public class AdmUsuarios {
     
     public boolean buscaUsuario(String usuario){
         boolean encuentra=false;        
-        System.out.println("Entra a buscaUsuario");
-        for(int x=0;x<dbUsuario.size();x++){
-            System.out.println("Entra al FOR");
-            System.out.println("XXXXXXXX -->" + dbUsuario.get(x).getUsuario());
-            if(dbUsuario.get(x).getUsuario().equals(usuario)){
+        System.out.println("XXXXXXXX Entra a buscaUsuario");
+        //for(int x=0;x<dbUsuario.size();x++){
+        for(Usuario unUsuario:dbUsuario){
+            System.out.println("XXXXXXXX Entra al FOR");
+            System.out.println("XXXXXXXX Nuestra al Usuario -->" + unUsuario.getUsuario());
+            //if(dbUsuario.get(x).getUsuario().equals(usuario)){
                 encuentra = true;
                 break;
-            }
+            //}
         }
+        System.out.println("XXXXXXXX Termino el FOR");
         return encuentra;
    }
     
