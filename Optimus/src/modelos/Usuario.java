@@ -18,11 +18,11 @@ public class Usuario {
     private String usuario;
     private String password;
     private String correo;
-    private Date f_ingreso;
+    private String f_ingreso;
     private String cargo;
     private Rol rol_actual;
 
-    public Usuario(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String password, String correo, Date f_ingreso, String cargo, Rol rol) {
+    public Usuario(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String password, String correo, String f_ingreso, String cargo, Rol rol) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
@@ -64,7 +64,7 @@ public class Usuario {
         return dni;
     }
 
-    public Date getF_ingreso() {
+    public String getF_ingreso() {
         return f_ingreso;
     }
 
@@ -101,7 +101,7 @@ public class Usuario {
         this.dni = dni;
     }
 
-    public void setF_ingreso(Date f_ingreso) {
+    public void setF_ingreso(String f_ingreso) {
         this.f_ingreso = f_ingreso;
     }
 
