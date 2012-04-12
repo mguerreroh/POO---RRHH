@@ -16,23 +16,28 @@ public class AdmTareasGenerales {
     // creo un objeto en el constructor
     public AdmTareasGenerales() {
         
-          this.lstTareasGenerales.add(new TareasGenerales(null,"PROYECTO CONGA", "10/10/2012", "34567865", "EN PROCESO",null));
+//          this.lstTareasGenerales.add(new TareasGenerales(null,"PROYECTO CONGA", "10/10/2012", "34567865", "EN PROCESO",null));
      
     }
 
    
     // Metodo para agregar una tarea
-    public TareasGenerales agregarTarea(Usuario user, String asunto, String fecha, String dni, String comentario, ArrayList<TareasGenerales> tareas){
-        tg = new TareasGenerales();
-        
-        tg.setAsunto(asunto);
-        tg.setFechaVcmto(fecha);
-        tg.setComentario(comentario);
-        tg.setResponsable(user);
- 
-        tg.setStatus(null);
-        tg.setInvitados(null);
-        
-     return tg;
+//    public TareasGenerales agregarTarea(Usuario user, String asunto, String fecha, String dni, String comentario, ArrayList<TareasGenerales> tareas){
+//        tg = new TareasGenerales();
+//        
+//        tg.setAsunto(asunto);
+//        tg.setFechaVcmto(fecha);
+//        tg.setComentario(comentario);
+//        tg.setResponsable(user);
+// 
+//        tg.setStatus(null);
+//        tg.setInvitados(null);
+//        
+//     return tg;
+//    }
+    
+        public void agregarTarea(TareasGenerales tarea){
+             
+              lstTareasGenerales.add(tarea);    
     }
 }
