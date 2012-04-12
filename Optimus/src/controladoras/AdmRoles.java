@@ -15,7 +15,47 @@ import modelos.Rol;
  */
 public class AdmRoles {
     
+  private ArrayList<Rol> roles = new ArrayList<Rol>();
 
+    public ArrayList<Rol> getRoles() {
+        return roles;
+    }
+
+  public void agregarRolAdmin(){
+      
+  Modulo Tarea = new Modulo("Tarea",true,true,true,true);
+    Modulo Declaracion = new Modulo("Declaracion",true,true,true,true);
+    Modulo Carta = new Modulo("Carta",true,true,true,true);
+    Modulo Usu = new Modulo("Admin",true,true,true,true); 
+   Modulo Roles = new Modulo("Roles",true,true,true,true); 
+    
+    ArrayList<Modulo> mods = new ArrayList<Modulo>();
+     mods.add(Tarea);
+    mods.add(Declaracion);
+    mods.add(Carta);
+    mods.add(Usu);
+                
+      Rol nuevo_rol=new Rol ("Admin", "El que admionistra el Sistema", mods);
+     roles.add(nuevo_rol);
+  }
+  public void agregarRolOtro(){
+      
+  Modulo Tarea = new Modulo("Tarea",true,true,true,true);
+    Modulo Declaracion = new Modulo("Declaracion",true,true,true,true);
+    Modulo Carta = new Modulo("Carta",true,true,true,true);
+    Modulo Usu = new Modulo("Admin",true,true,true,true); 
+   Modulo Roles = new Modulo("Roles",true,true,true,true); 
+    
+    ArrayList<Modulo> mods = new ArrayList<Modulo>();
+     mods.add(Tarea);
+    mods.add(Declaracion);
+    mods.add(Carta);
+    mods.add(Usu);
+                
+      Rol nuevo_rol=new Rol ("Otro", "Rol Normal del Sistema", mods);
+     roles.add(nuevo_rol);
+  }
+        
 //        private Modulo Tarea = new Modulo(null,false,true,true,true);
 //        private Modulo Declaracion = new Modulo("Declaracion",true,false,true,true);
 //        private Modulo Carta = new Modulo("Carta",true,true,false,true);
