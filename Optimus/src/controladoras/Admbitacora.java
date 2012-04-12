@@ -13,7 +13,7 @@ import modelos.Bitacora;
  *
  * @author mguerrero
  */
-public class AdmBitacora {
+ public class AdmBitacora {
     
     private ArrayList<Bitacora> dbbitacora = new ArrayList<Bitacora>();
     

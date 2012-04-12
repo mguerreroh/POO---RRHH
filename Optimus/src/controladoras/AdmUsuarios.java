@@ -17,11 +17,35 @@ import java.util.Date;
  */
 public class AdmUsuarios {
     
-    ArrayList<Usuario> dbUsuario;
+//    ArrayList<Usuario> dbUsuario;
+//    Usuario objUsuarioEncontrado;
+    
+    ArrayList<Usuario> dbUsuario=new ArrayList<Usuario>() ;
+    
+        public ArrayList<Usuario> getDbUsuario() {
+        return dbUsuario;
+    }
     Usuario objUsuarioEncontrado;
     
     public Usuario getObjUsuarioEncontrado() {
         return objUsuarioEncontrado;
+    }
+          public void agregarUsuario(Usuario user) {
+        dbUsuario.add(user);
+    }
+        
+      
+        public Usuario getUsu_nombre(String nombre) {
+        Usuario temp=null;
+          for (int i=0; i<dbUsuario.size();i++)
+           {
+                if (nombre.equals(dbUsuario.get(i).getNombre()))
+                    temp=dbUsuario.get(i);
+                    break;
+       }
+        
+         
+            return temp;
     }
         
     //private ArrayList<Usuario> dbUsuarios = new ArrayList<Usuario>();
@@ -144,29 +168,7 @@ public class AdmUsuarios {
         return encuentra;
     }
     
-    public static boolean DatosUsuarioBuscado(String usuario, ArrayList<Usuario> dbArray){
-        boolean encuentra=false;
-        for(Usuario unUsuario:dbArray){
-            if(unUsuario.getUsuario().equals(usuario)){
-                encuentra=true;
-                System.out.println("Usuario encontrado:");
-                System.out.println("------------------");
-                System.out.println("Nombre --> " + unUsuario.getNombre());
-                System.out.println("Ap. Paterno --> " + unUsuario.getApellidoPaterno());
-                System.out.println("Ap. Materno --> " + unUsuario.getApellidoMaterno());
-                System.out.println("Usuario --> " + unUsuario.getUsuario());
-                System.out.println("Password --> " + unUsuario.getPassword());
-                System.out.println("Correo --> " + unUsuario.getCorreo());
-                System.out.println("Fecha Ingreso --> " + unUsuario.getF_ingreso());
-                System.out.println("Cargo --> " + unUsuario.getCargo());
-                System.out.println("Rol --> " + unUsuario.getRol_actual());
-                break;
-            }
-        }
-        return encuentra;
-    }
-    
-    public void DatosUsuarioBuscado2(String user){
+            public void DatosUsuarioBuscado(String user){
         for(Usuario unUsuario:dbUsuario){
             if(unUsuario.getUsuario().equals(user)){
                 objUsuarioEncontrado = new Usuario(unUsuario.getDni(), unUsuario.getNombre(), unUsuario.getApellidoPaterno(), 
@@ -176,5 +178,39 @@ public class AdmUsuarios {
                 break;
             }
         }
-   }    
+   }  
+    
+//    public static boolean DatosUsuarioBuscado(String usuario, ArrayList<Usuario> dbArray){
+//        boolean encuentra=false;
+//        for(Usuario unUsuario:dbArray){
+//            if(unUsuario.getUsuario().equals(usuario)){
+//                encuentra=true;
+//                System.out.println("Usuario encontrado:");
+//                System.out.println("------------------");
+//                System.out.println("Nombre --> " + unUsuario.getNombre());
+//                System.out.println("Ap. Paterno --> " + unUsuario.getApellidoPaterno());
+//                System.out.println("Ap. Materno --> " + unUsuario.getApellidoMaterno());
+//                System.out.println("Usuario --> " + unUsuario.getUsuario());
+//                System.out.println("Password --> " + unUsuario.getPassword());
+//                System.out.println("Correo --> " + unUsuario.getCorreo());
+//                System.out.println("Fecha Ingreso --> " + unUsuario.getF_ingreso());
+//                System.out.println("Cargo --> " + unUsuario.getCargo());
+//                System.out.println("Rol --> " + unUsuario.getRol_actual());
+//                break;
+//            }
+//        }
+//        return encuentra;
+//    }
+//    
+//    public void DatosUsuarioBuscado2(String user){
+//        for(Usuario unUsuario:dbUsuario){
+//            if(unUsuario.getUsuario().equals(user)){
+//                objUsuarioEncontrado = new Usuario(unUsuario.getDni(), unUsuario.getNombre(), unUsuario.getApellidoPaterno(), 
+//                        unUsuario.getApellidoMaterno(), unUsuario.getUsuario(), unUsuario.getPassword(), 
+//                        unUsuario.getCorreo(), unUsuario.getF_ingreso(), unUsuario.getCargo(), unUsuario.getRol_actual());
+////                objUsuarioEncontrado = new Usuario(dni, nombre, apepat, apemat, usuario, password, correo, f_ingreso, cargo, rol)
+//                break;
+//            }
+//        }
+//   }    
 }
