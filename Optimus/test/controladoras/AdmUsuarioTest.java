@@ -63,11 +63,11 @@ public class AdmUsuarioTest {
         
         String usuarioDatos="zguerrero";
         
-        //DatosUsuarioBuscado
-        if (AdmUsuarios.DatosUsuarioBuscado(usuarioDatos, dbUsuario)){
-            System.out.println("El usuario " + usuarioBuscar + ", ya existe!!!!");
-        } else System.out.println("El usuario " + usuarioBuscar + ", no existe!!!!");
-        
+//        //DatosUsuarioBuscado
+//        if (AdmUsuarios.DatosUsuarioBuscado(usuarioDatos, dbUsuario)){
+//            System.out.println("El usuario " + usuarioBuscar + ", ya existe!!!!");
+//        } else System.out.println("El usuario " + usuarioBuscar + ", no existe!!!!");
+//        
         //Fin Test con ArraydbUsuario
     }
 

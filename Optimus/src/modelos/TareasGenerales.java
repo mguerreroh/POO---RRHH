@@ -30,11 +30,11 @@ public class TareasGenerales {
         this.fechaVcmto = fechaVcmto;
         this.comentario = comentario;
         this.status = status;
-//         for (int i=0; i<users.size();i++)
-//           {
-//       this.Invitados.add(users.get(i));
-//       }
-//     
+         for (int i=0; i<users.size();i++)
+           {
+       this.Invitados.add(users.get(i));
+       }
+     
     }
     
     public TareasGenerales(){

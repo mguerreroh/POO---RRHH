@@ -13,24 +13,24 @@ import java.util.ArrayList;
 public class Declaracion {
     
     
-      private Usuario responsable;
-      private String Cargo;
-       private String Tipo;
-        private String fechaAsump;
-         private String fechaRef;
+    private Usuario responsable;
+    private String Cargo;
+    private String Tipo;
+    private String fechaAsump;
+    private String fechaRef;
     private String fechaDoc;
-     private String NroDoc;
-      private String Publicacion;
-private String asunto;
+    private String NroDoc;
+    private String Publicacion;
+    private String asunto;
   
     private String fechaVcmto;
     private String comentario;
     private String status;
 
    
-      private ArrayList<Usuario> Invitados = new ArrayList<Usuario>();
+    private ArrayList<Usuario> Invitados = new ArrayList<Usuario>();
 
- public Declaracion(){}
+    public Declaracion(){}
 
     public Declaracion(Usuario responsable, String asunto, String fechaVcmto, String comentario, String status, ArrayList<Usuario> users,String cargo,String doc,String publicacion,
             String asump,String fdoc,String ref) {
