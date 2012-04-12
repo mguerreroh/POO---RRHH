@@ -39,7 +39,7 @@ public class AdmUsuarioTest {
         System.out.println("El F.ingreso del Usuario es: " + user1.getF_ingreso());
         System.out.println("El Cargo del Usuario es: "     + user1.getCargo());
 
-        Usuario user2 = new Usuario("09534044", "Ricardo", "Guerrero", "Cordova", "rguerrero", "rguerrero", "rguerrero@", null, "cargo", rol_actual);
+        Usuario user2 = new Usuario("09534045", "Ricardo", "Guerrero", "Cordova", "rguerrero", "rguerrero", "rguerrero@", null, "cargo", rol_actual);
         System.out.println("El Nombre del Usuario es: "     + user2.getNombre());
         System.out.println("El Ape. Pat. del Usuario es: "  + user2.getApellidoPaterno());
         System.out.println("El Ape. Mat. del Usuario es: "  + user2.getApellidoMaterno());
@@ -71,6 +71,7 @@ public class AdmUsuarioTest {
         //Fin Test con ArraydbUsuario
     }
 
+    @Test
     public void siNoingresoElusuarioMeDebeDarError(){
         assertFalse(admUsuarios.verificarUsuario(null));
         System.out.println("Usuario no debe estar vacio");
@@ -132,6 +133,7 @@ public class AdmUsuarioTest {
     @Test
     public void siNoIngresaCodigoRolDebeDarError(){
         assertFalse(admUsuarios.validarCodigoRol(null));
+         System.out.println("El rol no debe de estar vacio");
     }
     
     //Faltan validaciones de Usuarios

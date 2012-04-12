@@ -102,11 +102,14 @@ public  void creaUsers()
         Carta tg1= new Carta(resp, "CREAR RESOLUCION MENSUAL", "10/10/2012","Comentario", "EN PROCESO", users,"00003",23.7,"Tipo1","123111");
         lstCarta.add(tg1);
        Carta tg2= new Carta(resp, "PROYECTO CONGA", "10/10/2012","Comentario", "EN PROCESO", users,"00002",35.67,"Tipo1","112311");
-         lstCarta.add(tg2);        
+         lstCarta.add(tg2);    
+         Carta tg3= new Carta(resp, "PROYECTO YANACA", "10/07/2012","Comentario", "EN PROCESO", users,"00007",45.80,"Tipo2","112399");
+         lstCarta.add(tg3); 
           System.out.println("Tamano De la lista Cartas Fianza " + lstCarta.size());
-        assertEquals(lstCarta.size(), 2);
+        assertEquals(lstCarta.size(), 3);
+        
 
-       assertEquals(lstCarta.get(0).getAsunto(), "CREAR RESOLUCION MENSUAL");
+       assertEquals(lstCarta.get(2).getAsunto(),"PROYECTO YANACA");
         System.out.println("Datos agregados correctamente..");
         
         
