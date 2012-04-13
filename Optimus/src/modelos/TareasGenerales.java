@@ -30,10 +30,10 @@ public class TareasGenerales {
         this.fechaVcmto = fechaVcmto;
         this.comentario = comentario;
         this.status = status;
-//         for (int i=0; i<users.size();i++)
+//      for (int i=0; i<users.size();i++)
 //           {
-//       this.Invitados.add(users.get(i));
-//       }
+//      this.Invitados.add(users.get(i));
+//      }
 //     
     }
     
@@ -66,7 +66,6 @@ public class TareasGenerales {
     }
 
    
-
     public String getFechaVcmto() {
         return fechaVcmto;
     }
@@ -76,7 +75,6 @@ public class TareasGenerales {
     }
 
     
-
     public Usuario getResponsable() {
         return responsable;
     }
@@ -93,7 +91,13 @@ public class TareasGenerales {
         this.status = status;
     }
     
-    
-    
+    public String noSePuedeEditarTarea(){
+        String stat = this.getStatus();
+        if(stat == "ASIGNADA"){
+           return "No se puede editar tarea, ya fue grabada"; 
+        }
+        return "";
+    }
+        
     
 }

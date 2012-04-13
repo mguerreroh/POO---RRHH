@@ -24,12 +24,10 @@ public class AdmTareasGenerales {
     // Metodo para agregar una tarea
     public TareasGenerales agregarTarea(Usuario user, String asunto, String fecha, String dni, String comentario, ArrayList<TareasGenerales> tareas){
         tg = new TareasGenerales();
-        
         tg.setAsunto(asunto);
         tg.setFechaVcmto(fecha);
         tg.setComentario(comentario);
         tg.setResponsable(user);
- 
         tg.setStatus(null);
         tg.setInvitados(null);
         
