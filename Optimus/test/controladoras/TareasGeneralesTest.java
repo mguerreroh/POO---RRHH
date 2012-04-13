@@ -40,8 +40,13 @@ public class TareasGeneralesTest {
         dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
       
         Usuario resp=dbUsuario.get(0);
-        dbUsuario.remove(0);
-        TareasGenerales tarea = new TareasGenerales(resp,"PROYECTO CONGA","10/10/2012","Comentario","EN PROCESO",dbUsuario);
+        
+        ArrayList<Usuario> dbInvitado = new ArrayList<Usuario>();
+        dbInvitado.add(dbUsuario.get(2));
+        dbInvitado.add(dbUsuario.get(1));
+        
+        //dbUsuario.remove(0);
+        TareasGenerales tarea = new TareasGenerales(resp,"PROYECTO CONGA","10/10/2012","Comentario","EN PROCESO",dbInvitado);
         assertNotNull(tarea.getAsunto());
         System.out.println("Asunto de Tarea: "+tarea.getAsunto());
         assertNotNull(tarea.getComentario());
@@ -53,7 +58,7 @@ public class TareasGeneralesTest {
 //      assertNotNull(tarea.getInvitados());    
         System.out.println("Invitados: " +tarea.getInvitados().size());
         for(int a=0;a<tarea.getInvitados().size();a++){
-            System.out.println("Los Invitados son: " +tarea.getInvitados().get(a).getNombre());
+            System.out.println("Los Invitados son(" + a + "): " +tarea.getInvitados().get(a).getNombre());
         }
         System.out.println("El rol actual es: "+dbUsuario.get(0).getRol_actual());
     }
@@ -66,14 +71,17 @@ public class TareasGeneralesTest {
        dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
       
        Usuario resp=dbUsuario.get(0);
-       dbUsuario.remove(0);
+       ArrayList<Usuario> dbInvitado = new ArrayList<Usuario>();
+       dbInvitado.add(dbUsuario.get(1));
+       dbInvitado.add(dbUsuario.get(2));
+//       dbUsuario.remove(0);
     
 //   llama a la clase controladora
 //   AdmTareasGenerales  objAdminTareasGenerales = new AdmTareasGenerales();
         
-       TareasGenerales tg1= new TareasGenerales(resp,"CREAR RESOLUCION MENSUAL","10/10/2012","Comentario","EN PROCESO",dbUsuario);
+       TareasGenerales tg1= new TareasGenerales(resp,"CREAR RESOLUCION MENSUAL","10/10/2012","Comentario","EN PROCESO",dbInvitado);
        lstTareasGenerales.add(tg1);
-       TareasGenerales tg2= new TareasGenerales(resp,"PROYECTO CONGA","10/10/2012","Comentario","EN PROCESO",dbUsuario);
+       TareasGenerales tg2= new TareasGenerales(resp,"PROYECTO CONGA","10/10/2012","Comentario","EN PROCESO",dbInvitado);
        lstTareasGenerales.add(tg2);   
        System.out.println("-------------------------------------------------");
        System.out.println("Test: cantidadDeTareasIngresadas");
@@ -101,7 +109,12 @@ public class TareasGeneralesTest {
         dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
       
         Usuario resp=dbUsuario.get(0);
-        TareasGenerales tarea = new TareasGenerales(resp,"PROYECTO MARCONI","10/10/2012","Comentario","EN PROCESO",dbUsuario);
+        ArrayList<Usuario> dbInvitado = new ArrayList<Usuario>();
+        dbInvitado.add(dbUsuario.get(1));
+        dbInvitado.add(dbUsuario.get(2));
+        dbInvitado.add(dbUsuario.get(3));
+
+        TareasGenerales tarea = new TareasGenerales(resp,"PROYECTO MARCONI","10/10/2012","Comentario","EN PROCESO",dbInvitado);
         assertNotNull(tarea.getAsunto());
         System.out.println("-------------------------------------------------");
         System.out.println("Test: campoAsuntoNoDebeEstarVacio");
@@ -120,7 +133,11 @@ public class TareasGeneralesTest {
         dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
       
         Usuario resp=dbUsuario.get(0);
-        TareasGenerales tarea = new TareasGenerales(resp,"PROYECTO MARCONI","10/10/2012","Comentario","EN PROCESO",dbUsuario);
+        ArrayList<Usuario> dbInvitado = new ArrayList<Usuario>();
+        dbInvitado.add(dbUsuario.get(1));
+        dbInvitado.add(dbUsuario.get(2));
+
+        TareasGenerales tarea = new TareasGenerales(resp,"PROYECTO MARCONI","10/10/2012","Comentario","EN PROCESO",dbInvitado);
         assertNotNull(tarea.getFechaVcmto());
         System.out.println("-------------------------------------------------");
         System.out.println("Test: campoFechaVctoNoDebeEstarVacio");
@@ -139,7 +156,11 @@ public class TareasGeneralesTest {
         dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
       
         Usuario resp=dbUsuario.get(0);
-        TareasGenerales tarea = new TareasGenerales(resp,"PROYECTO MARCONI","10/10/2012","Comentario","EN PROCESO",dbUsuario);
+        ArrayList<Usuario> dbInvitado = new ArrayList<Usuario>();
+        dbInvitado.add(dbUsuario.get(1));
+        dbInvitado.add(dbUsuario.get(3));
+
+        TareasGenerales tarea = new TareasGenerales(resp,"PROYECTO MARCONI","10/10/2012","Comentario","EN PROCESO",dbInvitado);
         assertNotNull(tarea.getResponsable());
         System.out.println("-------------------------------------------------");
         System.out.println("Test: campoResponsableNoDebeEstaVacio");
@@ -157,7 +178,11 @@ public class TareasGeneralesTest {
         dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
       
         Usuario resp=dbUsuario.get(0);
-        TareasGenerales tarea = new TareasGenerales(resp,"PROYECTO MARCONI","10/10/2012","Comentario","ASIGNADA",dbUsuario);
+        ArrayList<Usuario> dbInvitado = new ArrayList<Usuario>();
+        dbInvitado.add(dbUsuario.get(1));
+        dbInvitado.add(dbUsuario.get(3));
+
+        TareasGenerales tarea = new TareasGenerales(resp,"PROYECTO MARCONI","10/10/2012","Comentario","ASIGNADA",dbInvitado);
         assertEquals("No se puede editar tarea, ya fue grabada", tarea.noSePuedeEditarTarea());
         System.out.println("-------------------------------------------------");
         System.out.println("Test: siTareaFueAsignadaNoSePodráModificar ");
@@ -175,7 +200,10 @@ public class TareasGeneralesTest {
         dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
       
         Usuario resp=dbUsuario.get(0);
-        TareasGenerales tarea = new TareasGenerales(resp,"PROYECTO MARCONI","10/10/2012","Comentario","ASIGN",dbUsuario);
+        ArrayList<Usuario> dbInvitado = new ArrayList<Usuario>();
+        dbInvitado.add(dbUsuario.get(1));
+
+        TareasGenerales tarea = new TareasGenerales(resp,"PROYECTO MARCONI","10/10/2012","Comentario","ASIGN",dbInvitado);
         assertNotSame("No se puede editar tarea, ya fue grabada", tarea.noSePuedeEditarTarea());
         System.out.println("-------------------------------------------------");
         System.out.println("Test: siTareaNoFueAsignadaSePodraModificar ");

@@ -173,5 +173,9 @@ public class AdmUsuarios {
                 System.out.println("Cargo:     "  + dbArray.get(x).getCargo());
             }
         }
-    }  
+    }
+    
+    public static boolean eliminarUsuario(String usuario, ArrayList<Usuario> dbArray){
+        return false;
+    }
 }
