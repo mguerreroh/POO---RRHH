@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/F:/GitHub/ProyectoFinal/POO---RRHH/Optimus/src/controladoras/AdminDeclaracion.java</file>
+        <file>file:/F:/GitHub/ProyectoFinal/POO---RRHH/Optimus/test/controladoras/AdmUsuarioTest.java</file>
+        <file>file:/F:/GitHub/ProyectoFinal/POO---RRHH/Optimus/test/controladoras/AdminCartaTest.java</file>
+        <file>file:/F:/GitHub/ProyectoFinal/POO---RRHH/Optimus/test/controladoras/AdminDeclaracionTest.java</file>
+        <file>file:/F:/GitHub/ProyectoFinal/POO---RRHH/Optimus/test/controladoras/AdmBitacoraTest.java</file>
+        <file>file:/F:/GitHub/ProyectoFinal/POO---RRHH/Optimus/src/modelos/TareasGenerales.java</file>
+        <file>file:/F:/GitHub/ProyectoFinal/POO---RRHH/Optimus/test/controladoras/TareasGeneralesTest.java</file>
+        <file>file:/F:/GitHub/ProyectoFinal/POO---RRHH/Optimus/src/modelos/Usuario.java</file>
+        <file>file:/F:/GitHub/ProyectoFinal/POO---RRHH/Optimus/src/modelos/Rol.java</file>
+        <file>file:/F:/GitHub/ProyectoFinal/POO---RRHH/Optimus/test/controladoras/RolTest.java</file>
+        <file>file:/F:/GitHub/ProyectoFinal/POO---RRHH/Optimus/src/controladoras/AdmTareasGenerales.java</file>
+    </open-files>
 </project-private>

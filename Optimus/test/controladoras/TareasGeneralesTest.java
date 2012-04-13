@@ -182,11 +182,7 @@ public class TareasGeneralesTest {
     @Test
     public void Test6(){
         
-    }
-    
-    @Test
-    public void Test7(){
-        
-    }
+    } 
+   
     
 }
