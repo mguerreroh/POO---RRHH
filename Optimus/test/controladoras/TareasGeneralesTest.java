@@ -3,6 +3,7 @@ package controladoras;
 
 import java.util.ArrayList;
 import java.util.List;
+import modelos.Bitacora;
 import modelos.Rol;
 import modelos.TareasGenerales;
 import modelos.Usuario;
@@ -13,7 +14,7 @@ import org.junit.Test;
 public class TareasGeneralesTest {
  AdmTareasGenerales objAdminTareasGenerales = null;
  ArrayList<TareasGenerales> lstTareasGenerales = new ArrayList<TareasGenerales>();
- ArrayList<Usuario> users = new ArrayList<Usuario>();
+ ArrayList<Usuario> dbUsuario = new ArrayList<Usuario>();
  RolTest test= new RolTest();
  //test.crearRol();
  Rol rol_actual=test.getRolActual();
@@ -28,14 +29,19 @@ public class TareasGeneralesTest {
   
     @Test
     public void crearTarea() {  
-        users.add(new Usuario("45074193","Juan"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual)); 
-        users.add(new Usuario("87074393","Jose"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
-        users.add(new Usuario("67023343","Pedro" ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
-        users.add(new Usuario("12071193","Carlos","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
+//        users.add(new Usuario("45074193","Juan"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual)); 
+//        users.add(new Usuario("87074393","Jose"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
+//        users.add(new Usuario("67023343","Pedro" ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
+//        users.add(new Usuario("12071193","Carlos","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
+        
+        dbUsuario.add(new Usuario("06109064", "Ricardo",   "Giron",        "Salas",    "rgiron",    "rgiron",    "rgiron@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("99999999", "Wolfgang",  "Boldt",    "De Rivero",    "wboldt",    "wboldt",    "wboldt@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("88888888", "Alex",      "Segovia",    "Segovia",  "asegovia",  "asegovia",  "asegovia@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
       
-        Usuario resp=users.get(0);
-        users.remove(0);
-        TareasGenerales tarea = new TareasGenerales(resp,"PROYECTO CONGA","10/10/2012","Comentario","EN PROCESO",users);
+        Usuario resp=dbUsuario.get(0);
+        dbUsuario.remove(0);
+        TareasGenerales tarea = new TareasGenerales(resp,"PROYECTO CONGA","10/10/2012","Comentario","EN PROCESO",dbUsuario);
         assertNotNull(tarea.getAsunto());
         System.out.println("Asunto de Tarea: "+tarea.getAsunto());
         assertNotNull(tarea.getComentario());
@@ -49,25 +55,25 @@ public class TareasGeneralesTest {
         for(int a=0;a<tarea.getInvitados().size();a++){
             System.out.println("Los Invitados son: " +tarea.getInvitados().get(a).getNombre());
         }
-        System.out.println("El rol actual es: "+users.get(0).getRol_actual());
+        System.out.println("El rol actual es: "+dbUsuario.get(0).getRol_actual());
     }
     
     @Test
     public void TestAdmin(){
-       users.add(new Usuario("45074193","Juan"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));  
-       users.add(new Usuario("87074393","Jose"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
-       users.add(new Usuario("67023343","Pedro" ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
-       users.add(new Usuario("12071193","Carlos","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
+       dbUsuario.add(new Usuario("06109064", "Ricardo",   "Giron",        "Salas",    "rgiron",    "rgiron",    "rgiron@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
+       dbUsuario.add(new Usuario("99999999", "Wolfgang",  "Boldt",    "De Rivero",    "wboldt",    "wboldt",    "wboldt@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
+       dbUsuario.add(new Usuario("88888888", "Alex",      "Segovia",    "Segovia",  "asegovia",  "asegovia",  "asegovia@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
+       dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
       
-       Usuario resp=users.get(0);
-       users.remove(0);
+       Usuario resp=dbUsuario.get(0);
+       dbUsuario.remove(0);
     
 //   llama a la clase controladora
 //   AdmTareasGenerales  objAdminTareasGenerales = new AdmTareasGenerales();
         
-       TareasGenerales tg1= new TareasGenerales(resp,"CREAR RESOLUCION MENSUAL","10/10/2012","Comentario","EN PROCESO",users);
+       TareasGenerales tg1= new TareasGenerales(resp,"CREAR RESOLUCION MENSUAL","10/10/2012","Comentario","EN PROCESO",dbUsuario);
        lstTareasGenerales.add(tg1);
-       TareasGenerales tg2= new TareasGenerales(resp,"PROYECTO CONGA","10/10/2012","Comentario","EN PROCESO",users);
+       TareasGenerales tg2= new TareasGenerales(resp,"PROYECTO CONGA","10/10/2012","Comentario","EN PROCESO",dbUsuario);
        lstTareasGenerales.add(tg2);   
        System.out.println("-------------------------------------------------");
        System.out.println("Test: cantidadDeTareasIngresadas");
@@ -89,13 +95,13 @@ public class TareasGeneralesTest {
     
     @Test
     public void campoAsuntoNoDebeEstaVacio(){
-        users.add(new Usuario("45074193","Juan"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual)); 
-        users.add(new Usuario("87074393","Jose"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
-        users.add(new Usuario("67023343","Pedro" ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
-        users.add(new Usuario("12071193","Carlos","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
+        dbUsuario.add(new Usuario("06109064", "Ricardo",   "Giron",        "Salas",    "rgiron",    "rgiron",    "rgiron@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("99999999", "Wolfgang",  "Boldt",    "De Rivero",    "wboldt",    "wboldt",    "wboldt@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("88888888", "Alex",      "Segovia",    "Segovia",  "asegovia",  "asegovia",  "asegovia@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
       
-        Usuario resp=users.get(0);
-        TareasGenerales tarea = new TareasGenerales(resp,"PROYECTO MARCONI","10/10/2012","Comentario","EN PROCESO",users);
+        Usuario resp=dbUsuario.get(0);
+        TareasGenerales tarea = new TareasGenerales(resp,"PROYECTO MARCONI","10/10/2012","Comentario","EN PROCESO",dbUsuario);
         assertNotNull(tarea.getAsunto());
         System.out.println("-------------------------------------------------");
         System.out.println("Test: campoAsuntoNoDebeEstarVacio");
@@ -108,13 +114,13 @@ public class TareasGeneralesTest {
     
     @Test
     public void campoFechaVctoNoDebeEstaVacio(){
-        users.add(new Usuario("45074193","Juan"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual)); 
-        users.add(new Usuario("87074393","Jose"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
-        users.add(new Usuario("67023343","Pedro" ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
-        users.add(new Usuario("12071193","Carlos","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
+        dbUsuario.add(new Usuario("06109064", "Ricardo",   "Giron",        "Salas",    "rgiron",    "rgiron",    "rgiron@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("99999999", "Wolfgang",  "Boldt",    "De Rivero",    "wboldt",    "wboldt",    "wboldt@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("88888888", "Alex",      "Segovia",    "Segovia",  "asegovia",  "asegovia",  "asegovia@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
       
-        Usuario resp=users.get(0);
-        TareasGenerales tarea = new TareasGenerales(resp,"PROYECTO MARCONI","10/10/2012","Comentario","EN PROCESO",users);
+        Usuario resp=dbUsuario.get(0);
+        TareasGenerales tarea = new TareasGenerales(resp,"PROYECTO MARCONI","10/10/2012","Comentario","EN PROCESO",dbUsuario);
         assertNotNull(tarea.getFechaVcmto());
         System.out.println("-------------------------------------------------");
         System.out.println("Test: campoFechaVctoNoDebeEstarVacio");
@@ -127,13 +133,13 @@ public class TareasGeneralesTest {
     
     @Test
     public void campoResponsableNoDebeEstaVacio(){
-        users.add(new Usuario("45074193","Juan"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual)); 
-        users.add(new Usuario("87074393","Jose"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
-        users.add(new Usuario("67023343","Pedro" ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
-        users.add(new Usuario("12071193","Carlos","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
+        dbUsuario.add(new Usuario("06109064", "Ricardo",   "Giron",        "Salas",    "rgiron",    "rgiron",    "rgiron@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("99999999", "Wolfgang",  "Boldt",    "De Rivero",    "wboldt",    "wboldt",    "wboldt@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("88888888", "Alex",      "Segovia",    "Segovia",  "asegovia",  "asegovia",  "asegovia@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
       
-        Usuario resp=users.get(0);
-        TareasGenerales tarea = new TareasGenerales(resp,"PROYECTO MARCONI","10/10/2012","Comentario","EN PROCESO",users);
+        Usuario resp=dbUsuario.get(0);
+        TareasGenerales tarea = new TareasGenerales(resp,"PROYECTO MARCONI","10/10/2012","Comentario","EN PROCESO",dbUsuario);
         assertNotNull(tarea.getResponsable());
         System.out.println("-------------------------------------------------");
         System.out.println("Test: campoResponsableNoDebeEstaVacio");
@@ -145,13 +151,13 @@ public class TareasGeneralesTest {
     
     @Test
     public void siTareaFueAsignadaNoSePodráModificar(){
-        users.add(new Usuario("45074193","Juan"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual)); 
-        users.add(new Usuario("87074393","Jose"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
-        users.add(new Usuario("67023343","Pedro" ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
-        users.add(new Usuario("12071193","Carlos","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
+        dbUsuario.add(new Usuario("06109064", "Ricardo",   "Giron",        "Salas",    "rgiron",    "rgiron",    "rgiron@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("99999999", "Wolfgang",  "Boldt",    "De Rivero",    "wboldt",    "wboldt",    "wboldt@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("88888888", "Alex",      "Segovia",    "Segovia",  "asegovia",  "asegovia",  "asegovia@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
       
-        Usuario resp=users.get(0);
-        TareasGenerales tarea = new TareasGenerales(resp,"PROYECTO MARCONI","10/10/2012","Comentario","ASIGNADA",users);
+        Usuario resp=dbUsuario.get(0);
+        TareasGenerales tarea = new TareasGenerales(resp,"PROYECTO MARCONI","10/10/2012","Comentario","ASIGNADA",dbUsuario);
         assertEquals("No se puede editar tarea, ya fue grabada", tarea.noSePuedeEditarTarea());
         System.out.println("-------------------------------------------------");
         System.out.println("Test: siTareaFueAsignadaNoSePodráModificar ");
@@ -163,13 +169,13 @@ public class TareasGeneralesTest {
     
     @Test
     public void siTareaNoFueAsignadaSePodraModificar(){
-        users.add(new Usuario("45074193","Juan"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual)); 
-        users.add(new Usuario("87074393","Jose"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
-        users.add(new Usuario("67023343","Pedro" ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
-        users.add(new Usuario("12071193","Carlos","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
+        dbUsuario.add(new Usuario("06109064", "Ricardo",   "Giron",        "Salas",    "rgiron",    "rgiron",    "rgiron@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("99999999", "Wolfgang",  "Boldt",    "De Rivero",    "wboldt",    "wboldt",    "wboldt@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("88888888", "Alex",      "Segovia",    "Segovia",  "asegovia",  "asegovia",  "asegovia@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
       
-        Usuario resp=users.get(0);
-        TareasGenerales tarea = new TareasGenerales(resp,"PROYECTO MARCONI","10/10/2012","Comentario","ASIGN",users);
+        Usuario resp=dbUsuario.get(0);
+        TareasGenerales tarea = new TareasGenerales(resp,"PROYECTO MARCONI","10/10/2012","Comentario","ASIGN",dbUsuario);
         assertNotSame("No se puede editar tarea, ya fue grabada", tarea.noSePuedeEditarTarea());
         System.out.println("-------------------------------------------------");
         System.out.println("Test: siTareaNoFueAsignadaSePodraModificar ");

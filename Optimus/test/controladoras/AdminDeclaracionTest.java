@@ -9,6 +9,7 @@ import modelos.Usuario;
 import modelos.TareasGenerales;
 import modelos.Declaracion;
 import java.util.ArrayList;
+import modelos.*;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -18,17 +19,21 @@ import static org.junit.Assert.*;
 public class AdminDeclaracionTest{
     AdminDeclaracion objAdminDeclaracion = null;
     ArrayList<Declaracion> lstDeclaracion = new ArrayList<Declaracion>();
-    ArrayList<Usuario> users = new ArrayList<Usuario>();
+    ArrayList<Usuario> dbUsuario = new ArrayList<Usuario>();
     RolTest test= new RolTest();
 //  test.crearRol();
     Rol rol_actual=test.getRolActual();
    
     @Test
     public  void creaUsers(){
-        users.add(new Usuario("45074193", "Juan"   , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual ));  
-        users.add(new Usuario("87074393", "Jose"   , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual ));
-        users.add(new Usuario("67023343", "Pedro"  , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual ));
-        users.add(new Usuario("12071193", "Carlos" , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual ));
+//        users.add(new Usuario("45074193", "Juan"   , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual ));  
+//        users.add(new Usuario("87074393", "Jose"   , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual ));
+//        users.add(new Usuario("67023343", "Pedro"  , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual ));
+//        users.add(new Usuario("12071193", "Carlos" , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual ));
+        dbUsuario.add(new Usuario("06109064", "Ricardo",   "Giron",        "Salas",    "rgiron",    "rgiron",    "rgiron@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("99999999", "Wolfgang",  "Boldt",    "De Rivero",    "wboldt",    "wboldt",    "wboldt@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("88888888", "Alex",      "Segovia",    "Segovia",  "asegovia",  "asegovia",  "asegovia@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
        
 //      for(int a=0;a<users.size();a++)
 //           {
@@ -41,13 +46,14 @@ public class AdminDeclaracionTest{
     public void testCrearTarea() {
         System.out.println("Test para crear una Declaracion y su detalle");
         System.out.println();
-        users.add(new Usuario("45074193", "Juan"   , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual ));  
-        users.add(new Usuario("87074393", "Jose"   , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual ));
-        users.add(new Usuario("67023343", "Pedro"  , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual ));
-        users.add(new Usuario("12071193", "Carlos" , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual ));
-        Usuario resp=users.get(0);
-        users.remove(0);
-        Declaracion tarea = new Declaracion(resp, "PROYECTO CONGA","10/10/2012","Comentario","EN PROCESO", users,"Cargo 1","Publicacion 2","Doc2","10/10/2012","10/10/2012","10/10/2012");
+        dbUsuario.add(new Usuario("06109064", "Ricardo",   "Giron",        "Salas",    "rgiron",    "rgiron",    "rgiron@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("99999999", "Wolfgang",  "Boldt",    "De Rivero",    "wboldt",    "wboldt",    "wboldt@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("88888888", "Alex",      "Segovia",    "Segovia",  "asegovia",  "asegovia",  "asegovia@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
+
+        Usuario resp=dbUsuario.get(0);
+        dbUsuario.remove(0);
+        Declaracion tarea = new Declaracion(resp, "PROYECTO CONGA","10/10/2012","Comentario","EN PROCESO", dbUsuario,"Cargo 1","Publicacion 2","Doc2","10/10/2012","10/10/2012","10/10/2012");
         assertNotNull(tarea.getAsunto());
         System.out.println("Asunto de Declaracion  " +tarea.getAsunto());
         assertNotNull(tarea.getComentario());
@@ -80,22 +86,22 @@ public class AdminDeclaracionTest{
         System.out.println("Test para cargar varias Declaraciones");
         System.out.println();
 
-        users.add(new Usuario("45074193", "Juan"   , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual ));  
-        users.add(new Usuario("87074393", "Jose"   , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual ));
-        users.add(new Usuario("67023343", "Pedro"  , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual ));
-        users.add(new Usuario("12071193", "Carlos" , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual ));
+        dbUsuario.add(new Usuario("06109064", "Ricardo",   "Giron",        "Salas",    "rgiron",    "rgiron",    "rgiron@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("99999999", "Wolfgang",  "Boldt",    "De Rivero",    "wboldt",    "wboldt",    "wboldt@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("88888888", "Alex",      "Segovia",    "Segovia",  "asegovia",  "asegovia",  "asegovia@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
  
-        Usuario resp=users.get(0);
-        users.remove(0);
+        Usuario resp=dbUsuario.get(0);
+        dbUsuario.remove(0);
         
         
          
 //      llama a la clase controladora
 //      AdmTareasGenerales  objAdminTareasGenerales = new AdmTareasGenerales();
   
-        Declaracion tg1= new Declaracion(resp, "CREAR RESOLUCION MENSUAL","10/10/2012","Comentario","EN PROCESO", users,"Cargo 20","Publicacion 2","Doc2","23/10/2012","10/10/2012","10/10/2012");
+        Declaracion tg1= new Declaracion(resp, "CREAR RESOLUCION MENSUAL","10/10/2012","Comentario","EN PROCESO", dbUsuario,"Cargo 20","Publicacion 2","Doc2","23/10/2012","10/10/2012","10/10/2012");
         lstDeclaracion.add(tg1);
-        Declaracion tg2= new Declaracion(resp, "PROYECTO CONGA","10/10/2012","Comentario","EN PROCESO", users,"Cargo 5","Publicacion 2","Doc5","10/10/2012","11/09/2012","10/10/2012");
+        Declaracion tg2= new Declaracion(resp, "PROYECTO CONGA","10/10/2012","Comentario","EN PROCESO", dbUsuario,"Cargo 5","Publicacion 2","Doc5","10/10/2012","11/09/2012","10/10/2012");
         lstDeclaracion.add(tg2);        
         System.out.println("Tamano De la lista Declaraciones " + lstDeclaracion.size());
         assertEquals(lstDeclaracion.size(), 2);

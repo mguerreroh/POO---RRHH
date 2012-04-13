@@ -57,7 +57,6 @@ public class Usuario {
     public void setRol_actual(Rol rol_actual) {
         this.rol_actual = rol_actual;
     }
-<<<<<<< HEAD
     
     public Bitacora getBitacora() {
         return bitacora_actual;
@@ -66,8 +65,6 @@ public class Usuario {
     public void setBitacora(Bitacora bitacora) {
         this.bitacora_actual = bitacora_actual;
     }
-=======
->>>>>>> 72db029748fcc4482102b22eba32f915e2c48f68
 
     public String getCorreo() {
         return correo;
