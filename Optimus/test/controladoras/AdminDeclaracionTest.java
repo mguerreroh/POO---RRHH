@@ -14,25 +14,26 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-
+import controladoras.TestGeneral;
 
 public class AdminDeclaracionTest{
     AdminDeclaracion objAdminDeclaracion = null;
     ArrayList<Declaracion> lstDeclaracion = new ArrayList<Declaracion>();
-    ArrayList<Usuario> dbUsuario = new ArrayList<Usuario>();
+    //ArrayList<Usuario> dbUsuario = new ArrayList<Usuario>();
     RolTest test= new RolTest();
 //  test.crearRol();
     Rol rol_actual=test.getRolActual();
     AdminDeclaracion admDeclaracion = new AdminDeclaracion();
-    
+    TestGeneral xTestGeneral= new TestGeneral(); 
+    ArrayList<Usuario> dbUsuario= xTestGeneral.simularTabla();
    
     @Test
     public  void creaUsers(){
         
-        dbUsuario.add(new Usuario("06109064", "Ricardo"  ,"Giron"   ,"Salas"    ,"rgiron"   ,"rgiron"   ,"rgiron@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("99999999", "Wolfgang" ,"Boldt"   ,"De Rivero","wboldt"   ,"wboldt"   ,"wboldt@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("88888888", "Alex"     ,"Segovia" ,"Segovia"  ,"asegovia" ,"asegovia" ,"asegovia@optimus.net" ,"16/02/2012","cargo1",rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("09534044", "Marcelino","Guerrero","Cordova"  ,"mguerrero","mguerrero","mguerrero@optimus.net","16/02/2012","cargo1",rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("06109064", "Ricardo"  ,"Giron"   ,"Salas"    ,"rgiron"   ,"rgiron"   ,"rgiron@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("99999999", "Wolfgang" ,"Boldt"   ,"De Rivero","wboldt"   ,"wboldt"   ,"wboldt@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("88888888", "Alex"     ,"Segovia" ,"Segovia"  ,"asegovia" ,"asegovia" ,"asegovia@optimus.net" ,"16/02/2012","cargo1",rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("09534044", "Marcelino","Guerrero","Cordova"  ,"mguerrero","mguerrero","mguerrero@optimus.net","16/02/2012","cargo1",rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
        
 //      for(int a=0;a<users.size();a++)
 //           {
@@ -45,14 +46,18 @@ public class AdminDeclaracionTest{
     public void testCrearTarea() {
         System.out.println("Test para crear una Declaracion y su detalle");
         System.out.println();
-        dbUsuario.add(new Usuario("06109064", "Ricardo"  ,"Giron"   ,"Salas"    ,"rgiron"   ,"rgiron"   ,"rgiron@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("99999999", "Wolfgang" ,"Boldt"   ,"De Rivero","wboldt"   ,"wboldt"   ,"wboldt@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("88888888", "Alex"     ,"Segovia" ,"Segovia"  ,"asegovia" ,"asegovia" ,"asegovia@optimus.net" ,"16/02/2012","cargo1",rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("09534044", "Marcelino","Guerrero","Cordova"  ,"mguerrero","mguerrero","mguerrero@optimus.net","16/02/2012","cargo1",rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("06109064", "Ricardo"  ,"Giron"   ,"Salas"    ,"rgiron"   ,"rgiron"   ,"rgiron@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("99999999", "Wolfgang" ,"Boldt"   ,"De Rivero","wboldt"   ,"wboldt"   ,"wboldt@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("88888888", "Alex"     ,"Segovia" ,"Segovia"  ,"asegovia" ,"asegovia" ,"asegovia@optimus.net" ,"16/02/2012","cargo1",rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("09534044", "Marcelino","Guerrero","Cordova"  ,"mguerrero","mguerrero","mguerrero@optimus.net","16/02/2012","cargo1",rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
 
         Usuario resp=dbUsuario.get(0);
-        dbUsuario.remove(0);
-        Declaracion tarea = new Declaracion(resp, "PROYECTO CONGA","10/10/2012","Comentario","EN PROCESO", dbUsuario,"Cargo 1","Publicacion 2","Doc2","10/10/2012","10/10/2012","10/10/2012");
+        //dbUsuario.remove(0);
+        ArrayList<Usuario> dbInvitado1 = new ArrayList<Usuario>();
+        dbInvitado1.add(dbUsuario.get(2));
+        dbInvitado1.add(dbUsuario.get(1));
+        
+        Declaracion tarea = new Declaracion(resp, "PROYECTO CONGA","10/10/2012","Comentario","EN PROCESO", dbInvitado1,"Cargo 1","Publicacion 2","Doc2","10/10/2012","10/10/2012","10/10/2012");
         assertNotNull(tarea.getAsunto());
         System.out.println("Asunto de Declaracion  " +tarea.getAsunto());
         assertNotNull(tarea.getComentario());
@@ -85,20 +90,23 @@ public class AdminDeclaracionTest{
         System.out.println("Test para cargar varias Declaraciones");
         System.out.println();
 
-        dbUsuario.add(new Usuario("06109064", "Ricardo"  ,"Giron"   ,"Salas"    ,"rgiron"   ,"rgiron"   ,"rgiron@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("99999999", "Wolfgang" ,"Boldt"   ,"De Rivero","wboldt"   ,"wboldt"   ,"wboldt@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("88888888", "Alex"     ,"Segovia" ,"Segovia"  ,"asegovia" ,"asegovia" ,"asegovia@optimus.net" ,"16/02/2012","cargo1",rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("09534044", "Marcelino","Guerrero","Cordova"  ,"mguerrero","mguerrero","mguerrero@optimus.net","16/02/2012","cargo1",rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
- 
+//        dbUsuario.add(new Usuario("06109064", "Ricardo"  ,"Giron"   ,"Salas"    ,"rgiron"   ,"rgiron"   ,"rgiron@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("99999999", "Wolfgang" ,"Boldt"   ,"De Rivero","wboldt"   ,"wboldt"   ,"wboldt@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("88888888", "Alex"     ,"Segovia" ,"Segovia"  ,"asegovia" ,"asegovia" ,"asegovia@optimus.net" ,"16/02/2012","cargo1",rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("09534044", "Marcelino","Guerrero","Cordova"  ,"mguerrero","mguerrero","mguerrero@optimus.net","16/02/2012","cargo1",rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
+// 
         Usuario resp=dbUsuario.get(0);
-        dbUsuario.remove(0);
+        //dbUsuario.remove(0);
+        ArrayList<Usuario> dbInvitado2 = new ArrayList<Usuario>();
+        dbInvitado2.add(dbUsuario.get(2));
+        dbInvitado2.add(dbUsuario.get(1));
   
 //      llama a la clase controladora
 //      AdmTareasGenerales  objAdminTareasGenerales = new AdmTareasGenerales();
   
-        Declaracion tg1= new Declaracion(resp, "CREAR RESOLUCION MENSUAL","10/10/2012","Comentario","EN PROCESO", dbUsuario,"Cargo 20","Publicacion 2","Doc2","23/10/2012","10/10/2012","10/10/2012");
+        Declaracion tg1= new Declaracion(resp, "CREAR RESOLUCION MENSUAL","10/10/2012","Comentario","EN PROCESO", dbInvitado2,"Cargo 20","Publicacion 2","Doc2","23/10/2012","10/10/2012","10/10/2012");
         lstDeclaracion.add(tg1);
-        Declaracion tg2= new Declaracion(resp, "PROYECTO CONGA","10/10/2012","Comentario","EN PROCESO", dbUsuario,"Cargo 5","Publicacion 2","Doc5","10/10/2012","11/09/2012","10/10/2012");
+        Declaracion tg2= new Declaracion(resp, "PROYECTO CONGA","10/10/2012","Comentario","EN PROCESO", dbInvitado2,"Cargo 5","Publicacion 2","Doc5","10/10/2012","11/09/2012","10/10/2012");
         lstDeclaracion.add(tg2);        
         System.out.println("Tamano De la lista Declaraciones " + lstDeclaracion.size());
         assertEquals(lstDeclaracion.size(), 2);
@@ -107,14 +115,12 @@ public class AdminDeclaracionTest{
        
     }
     
-    
-    
     @Test
     public void campoResponsableDebeContenerDato(){
-        dbUsuario.add(new Usuario("06109064", "Ricardo"  ,"Giron"   ,"Salas"    ,"rgiron"   ,"rgiron"   ,"rgiron@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("99999999", "Wolfgang" ,"Boldt"   ,"De Rivero","wboldt"   ,"wboldt"   ,"wboldt@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("88888888", "Alex"     ,"Segovia" ,"Segovia"  ,"asegovia" ,"asegovia" ,"asegovia@optimus.net" ,"16/02/2012","cargo1",rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("09534044", "Marcelino","Guerrero","Cordova"  ,"mguerrero","mguerrero","mguerrero@optimus.net","16/02/2012","cargo1",rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("06109064", "Ricardo"  ,"Giron"   ,"Salas"    ,"rgiron"   ,"rgiron"   ,"rgiron@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("99999999", "Wolfgang" ,"Boldt"   ,"De Rivero","wboldt"   ,"wboldt"   ,"wboldt@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("88888888", "Alex"     ,"Segovia" ,"Segovia"  ,"asegovia" ,"asegovia" ,"asegovia@optimus.net" ,"16/02/2012","cargo1",rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("09534044", "Marcelino","Guerrero","Cordova"  ,"mguerrero","mguerrero","mguerrero@optimus.net","16/02/2012","cargo1",rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
         //test
         assertFalse(admDeclaracion.campoUsuarioVacio(dbUsuario.get(1).getNombre()));
 //        assertFalse(admDeclaracion.campoUsuarioVacio(""));
@@ -130,13 +136,17 @@ public class AdminDeclaracionTest{
     
     @Test
     public void campoMotivoDebeContenerDato(){
-        dbUsuario.add(new Usuario("06109064", "Ricardo"  ,"Giron"   ,"Salas"    ,"rgiron"   ,"rgiron"   ,"rgiron@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("99999999", "Wolfgang" ,"Boldt"   ,"De Rivero","wboldt"   ,"wboldt"   ,"wboldt@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("88888888", "Alex"     ,"Segovia" ,"Segovia"  ,"asegovia" ,"asegovia" ,"asegovia@optimus.net" ,"16/02/2012","cargo1",rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("09534044", "Marcelino","Guerrero","Cordova"  ,"mguerrero","mguerrero","mguerrero@optimus.net","16/02/2012","cargo1",rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("06109064", "Ricardo"  ,"Giron"   ,"Salas"    ,"rgiron"   ,"rgiron"   ,"rgiron@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("99999999", "Wolfgang" ,"Boldt"   ,"De Rivero","wboldt"   ,"wboldt"   ,"wboldt@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("88888888", "Alex"     ,"Segovia" ,"Segovia"  ,"asegovia" ,"asegovia" ,"asegovia@optimus.net" ,"16/02/2012","cargo1",rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("09534044", "Marcelino","Guerrero","Cordova"  ,"mguerrero","mguerrero","mguerrero@optimus.net","16/02/2012","cargo1",rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
         Usuario resp=dbUsuario.get(0);
-        dbUsuario.remove(0);
-        Declaracion tg1= new Declaracion(resp, "CREAR RESOLUCION MENSUAL","10/10/2012","Comentario","EN PROCESO", dbUsuario,"Cargo 20","Publicacion 2","Doc2","23/10/2012","10/10/2012","10/10/2012");
+        //dbUsuario.remove(0);
+        ArrayList<Usuario> dbInvitado3 = new ArrayList<Usuario>();
+        dbInvitado3.add(dbUsuario.get(2));
+        dbInvitado3.add(dbUsuario.get(1));
+        
+        Declaracion tg1= new Declaracion(resp, "CREAR RESOLUCION MENSUAL","10/10/2012","Comentario","EN PROCESO", dbInvitado3,"Cargo 20","Publicacion 2","Doc2","23/10/2012","10/10/2012","10/10/2012");
         
         //test
         assertFalse(admDeclaracion.campoMotivoVacio(tg1.getAsunto()));
@@ -153,14 +163,18 @@ public class AdminDeclaracionTest{
     
     @Test
     public void campoFechaDeVencimientoDebeContenerDato(){
-        dbUsuario.add(new Usuario("06109064", "Ricardo"  ,"Giron"   ,"Salas"    ,"rgiron"   ,"rgiron"   ,"rgiron@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("99999999", "Wolfgang" ,"Boldt"   ,"De Rivero","wboldt"   ,"wboldt"   ,"wboldt@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("88888888", "Alex"     ,"Segovia" ,"Segovia"  ,"asegovia" ,"asegovia" ,"asegovia@optimus.net" ,"16/02/2012","cargo1",rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("09534044", "Marcelino","Guerrero","Cordova"  ,"mguerrero","mguerrero","mguerrero@optimus.net","16/02/2012","cargo1",rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("06109064", "Ricardo"  ,"Giron"   ,"Salas"    ,"rgiron"   ,"rgiron"   ,"rgiron@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("99999999", "Wolfgang" ,"Boldt"   ,"De Rivero","wboldt"   ,"wboldt"   ,"wboldt@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("88888888", "Alex"     ,"Segovia" ,"Segovia"  ,"asegovia" ,"asegovia" ,"asegovia@optimus.net" ,"16/02/2012","cargo1",rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("09534044", "Marcelino","Guerrero","Cordova"  ,"mguerrero","mguerrero","mguerrero@optimus.net","16/02/2012","cargo1",rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
     
         Usuario resp=dbUsuario.get(0);
-        dbUsuario.remove(0);
-        Declaracion tg1= new Declaracion(resp, "CREAR RESOLUCION MENSUAL","10/10/2012","Comentario","EN PROCESO", dbUsuario,"Cargo 20","Publicacion 2","Doc2","23/10/2012","10/10/2012","10/10/2012");
+        //dbUsuario.remove(0);
+        ArrayList<Usuario> dbInvitado4 = new ArrayList<Usuario>();
+        dbInvitado4.add(dbUsuario.get(2));
+        dbInvitado4.add(dbUsuario.get(1));
+        
+        Declaracion tg1= new Declaracion(resp, "CREAR RESOLUCION MENSUAL","10/10/2012","Comentario","EN PROCESO", dbInvitado4,"Cargo 20","Publicacion 2","Doc2","23/10/2012","10/10/2012","10/10/2012");
         
         //test
         assertFalse(admDeclaracion.campoFechaVencimientoVacio(tg1.getFechaVcmto()));
@@ -176,11 +190,12 @@ public class AdminDeclaracionTest{
     
     @Test
     public void siTareaSeConfirmoSoloSePuedeModificarCampoPublicar(){
-        dbUsuario.add(new Usuario("06109064", "Ricardo"  ,"Giron"   ,"Salas"    ,"rgiron"   ,"rgiron"   ,"rgiron@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("99999999", "Wolfgang" ,"Boldt"   ,"De Rivero","wboldt"   ,"wboldt"   ,"wboldt@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("88888888", "Alex"     ,"Segovia" ,"Segovia"  ,"asegovia" ,"asegovia" ,"asegovia@optimus.net" ,"16/02/2012","cargo1",rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("09534044", "Marcelino","Guerrero","Cordova"  ,"mguerrero","mguerrero","mguerrero@optimus.net","16/02/2012","cargo1",rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("06109064", "Ricardo"  ,"Giron"   ,"Salas"    ,"rgiron"   ,"rgiron"   ,"rgiron@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("99999999", "Wolfgang" ,"Boldt"   ,"De Rivero","wboldt"   ,"wboldt"   ,"wboldt@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("88888888", "Alex"     ,"Segovia" ,"Segovia"  ,"asegovia" ,"asegovia" ,"asegovia@optimus.net" ,"16/02/2012","cargo1",rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("09534044", "Marcelino","Guerrero","Cordova"  ,"mguerrero","mguerrero","mguerrero@optimus.net","16/02/2012","cargo1",rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
    
+<<<<<<< HEAD
         Usuario resp=dbUsuario.get(0);
         dbUsuario.remove(0);
         Declaracion tg1= new Declaracion(resp, "CREAR RESOLUCION MENSUAL","10/10/2012","Comentario","ASIGNADA", dbUsuario,"Cargo 20","Publicacion 2","Doc2","23/10/2012","10/10/2012","10/10/2012");
@@ -206,6 +221,15 @@ public class AdminDeclaracionTest{
         Usuario resp=dbUsuario.get(0);
         dbUsuario.remove(0);
         Declaracion tg1= new Declaracion(resp, "CREAR RESOLUCION MENSUAL","10/10/2012","Comentario","ASIGNADA", dbUsuario,"Cargo 20","Publicacion 2","Doc2","23/10/2012","10/10/2012","10/10/2012");
+=======
+        Usuario resp = dbUsuario.get(0);
+        //dbUsuario.remove(0);
+        ArrayList<Usuario> dbInvitado5 = new ArrayList<Usuario>();
+        dbInvitado5.add(dbUsuario.get(2));
+        dbInvitado5.add(dbUsuario.get(1));
+        
+        Declaracion tg1= new Declaracion(resp, "CREAR RESOLUCION MENSUAL","10/10/2012","Comentario","EN PROCESO", dbInvitado5,"Cargo 20","Publicacion 2","Doc2","23/10/2012","10/10/2012","10/10/2012");
+>>>>>>> 6063a94d3bfad7121b7a87bc9f46b3a39c381042
         
         //test
         assertFalse(admDeclaracion.validarStatusDeTarea(tg1.getStatus()));

@@ -30,10 +30,7 @@ public class AdmUsuarioTest {
         test.crearRol();
         Rol rol_actual=test.getRolActual();
         
-        DateFormat formateador = DateFormat.getInstance();
-        //System.out.println("Fecha de hoy-->" + formateador.format(date));
-        
-        Usuario user1 = new Usuario("09534044", "Zadith", "Guerrero", "Cordova", "zguerrero", "zguerrero", "zguerrero@", null, "cargo", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", ""));
+        Usuario user1 = new Usuario("06109064", "Ricardo", "Giron", "Salas", "rgiron", "rgiron", "rgiron@optimus.net", null, "cargo1", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", ""));
         System.out.println("*----- Inicio verificacion Usuario :" + user1.getUsuario() + " -----*");
         System.out.println("El Nombre del Usuario es: "    + user1.getNombre());
         System.out.println("El Ape. Pat. del Usuario es: " + user1.getApellidoPaterno());
@@ -43,34 +40,72 @@ public class AdmUsuarioTest {
         System.out.println("El Correo del Usuario es: "    + user1.getCorreo());
         System.out.println("El F.ingreso del Usuario es: " + user1.getF_ingreso());
         System.out.println("El Cargo del Usuario es: "     + user1.getCargo());
+        System.out.println("El Rol del Usuario es: "       + user1.getRol_actual().getDescrip());
         System.out.println("El usuario quien lo creo es: " + user1.getBitacora().getUsCrea());
         System.out.println("La fecha de creacion es: "     + user1.getBitacora().getfCrea());
         System.out.println("*----- Fin verificacion Usuario -----*");
         System.out.println("\n");
 
-        Usuario user2 = new Usuario("09534045", "Ricardo", "Guerrero", "Cordova", "rguerrero", "rguerrero", "rguerrero@", null, "cargo", rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", ""));
+        Usuario user2 = new Usuario("99999999", "Wolfgang", "Boldt", "De Rivero", "wboldt", "wboldt", "wboldt@optimus.net", null, "cargo2", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", ""));
         System.out.println("*----- Inicio verificacion Usuario :" + user2.getUsuario() + " -----*");
-        System.out.println("El Nombre del Usuario es: "     + user2.getNombre());
-        System.out.println("El Ape. Pat. del Usuario es: "  + user2.getApellidoPaterno());
-        System.out.println("El Ape. Mat. del Usuario es: "  + user2.getApellidoMaterno());
-        System.out.println("El Usuario  del Usuario es: "   + user2.getUsuario());
-        System.out.println("El Password del Usuario es: "   + user2.getPassword());
-        System.out.println("El Correo del Usuario es: "     + user2.getCorreo());
-        System.out.println("El F.ingreso del Usuario es: "  + user2.getF_ingreso());
-        System.out.println("El Cargo del Usuario es: "      + user2.getCargo());
-        System.out.println("El Rol del Usuario es: "        + user2.getRol_actual().getDescrip());
-        System.out.println("El usuario quien lo creo es: "  + user2.getBitacora().getUsCrea());
-        System.out.println("La fecha de creacion es: "      + user2.getBitacora().getfCrea());
+        System.out.println("El Nombre del Usuario es: "    + user2.getNombre());
+        System.out.println("El Ape. Pat. del Usuario es: " + user2.getApellidoPaterno());
+        System.out.println("El Ape. Mat. del Usuario es: " + user2.getApellidoMaterno());
+        System.out.println("El Usuario  del Usuario es: "  + user2.getUsuario());
+        System.out.println("El Password del Usuario es: "  + user2.getPassword());
+        System.out.println("El Correo del Usuario es: "    + user2.getCorreo());
+        System.out.println("El F.ingreso del Usuario es: " + user2.getF_ingreso());
+        System.out.println("El Cargo del Usuario es: "     + user2.getCargo());
+        System.out.println("El Rol del Usuario es: "       + user2.getRol_actual().getDescrip());
+        System.out.println("El usuario quien lo creo es: " + user2.getBitacora().getUsCrea());
+        System.out.println("La fecha de creacion es: "     + user2.getBitacora().getfCrea());
+        System.out.println("*----- Fin verificacion Usuario -----*");
+        System.out.println("\n");
+        
+        Usuario user3 = new Usuario("88888888", "Alex", "Segovia", "Segovia", "asegovia", "asegovia", "asegovia@optimus.net", null, "cargo2", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", ""));
+        System.out.println("*----- Inicio verificacion Usuario :" + user2.getUsuario() + " -----*");
+        System.out.println("El Nombre del Usuario es: "    + user3.getNombre());
+        System.out.println("El Ape. Pat. del Usuario es: " + user3.getApellidoPaterno());
+        System.out.println("El Ape. Mat. del Usuario es: " + user3.getApellidoMaterno());
+        System.out.println("El Usuario  del Usuario es: "  + user3.getUsuario());
+        System.out.println("El Password del Usuario es: "  + user3.getPassword());
+        System.out.println("El Correo del Usuario es: "    + user3.getCorreo());
+        System.out.println("El F.ingreso del Usuario es: " + user3.getF_ingreso());
+        System.out.println("El Cargo del Usuario es: "     + user3.getCargo());
+        System.out.println("El Rol del Usuario es: "       + user3.getRol_actual().getDescrip());
+        System.out.println("El usuario quien lo creo es: " + user3.getBitacora().getUsCrea());
+        System.out.println("La fecha de creacion es: "     + user3.getBitacora().getfCrea());
+        System.out.println("*----- Fin verificacion Usuario -----*");
+        System.out.println("\n");
+        
+        Usuario user4 = new Usuario("09534044", "Marcelino", "Guerrero", "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", null, "cargo2", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", ""));
+        System.out.println("*----- Inicio verificacion Usuario :" + user2.getUsuario() + " -----*");
+        System.out.println("El Nombre del Usuario es: "    + user4.getNombre());
+        System.out.println("El Ape. Pat. del Usuario es: " + user4.getApellidoPaterno());
+        System.out.println("El Ape. Mat. del Usuario es: " + user4.getApellidoMaterno());
+        System.out.println("El Usuario  del Usuario es: "  + user4.getUsuario());
+        System.out.println("El Password del Usuario es: "  + user4.getPassword());
+        System.out.println("El Correo del Usuario es: "    + user4.getCorreo());
+        System.out.println("El F.ingreso del Usuario es: " + user4.getF_ingreso());
+        System.out.println("El Cargo del Usuario es: "     + user4.getCargo());
+        System.out.println("El Rol del Usuario es: "       + user4.getRol_actual().getDescrip());
+        System.out.println("El usuario quien lo creo es: " + user4.getBitacora().getUsCrea());
+        System.out.println("La fecha de creacion es: "     + user4.getBitacora().getfCrea());
         System.out.println("*----- Fin verificacion Usuario -----*");
         System.out.println("\n");
         
         //Inicio Test con Array
-        ArrayList<Usuario> dbUsuario = new ArrayList<Usuario>();
+//        ArrayList<Usuario> dbUsuario = new ArrayList<Usuario>();
+//        
+//        dbUsuario.add(new Usuario("06109064", "Ricardo",   "Giron",        "Salas",    "rgiron",    "rgiron",    "rgiron@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("99999999", "Wolfgang",  "Boldt",    "De Rivero",    "wboldt",    "wboldt",    "wboldt@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("88888888", "Alex",      "Segovia",    "Segovia",  "asegovia",  "asegovia",  "asegovia@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
+//        dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
         
-        dbUsuario.add(new Usuario("09534044",  "Zadith", "Guerrero", "Cordova", "zguerrero", "zguerrero", "zguerrero@", null, "cargo", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("09534045", "Ricardo", "Guerrero", "Cordova", "rguerrero", "rguerrero", "rguerrero@", null, "cargo", rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
-        
-        String usuarioBuscar="zguerrero";
+        TestGeneral xTestGeneral= new TestGeneral(); 
+        ArrayList<Usuario> dbUsuario= xTestGeneral.simularTabla();
+   
+        String usuarioBuscar="mguerrero";
         
         System.out.println("Validando la existencia del Usuario " + usuarioBuscar);
         System.out.println("------------------------------------------------------------");
@@ -79,7 +114,7 @@ public class AdmUsuarioTest {
         } else System.out.println("El usuario " + usuarioBuscar + ", no existe!!!!");
         System.out.println("\n");
         
-        String usuarioDatos="zguerrero";
+        String usuarioDatos="wboldt";
         
         if (AdmUsuarios.buscaUsuario(usuarioDatos, dbUsuario)){
             System.out.println("Los datos de usuario " + usuarioBuscar + ", son los siguientes:");
@@ -92,12 +127,6 @@ public class AdmUsuarioTest {
             System.out.println("Bitacora (" + x + "): "  + dbUsuario.get(x).getBitacora().getUsCrea());
         }
         
-//        //DatosUsuarioBuscado
-//        if (AdmUsuarios.DatosUsuarioBuscado(usuarioDatos, dbUsuario)){
-//            System.out.println("El usuario " + usuarioBuscar + ", ya existe!!!!");
-//        } else System.out.println("El usuario " + usuarioBuscar + ", no existe!!!!");
-//        
-        //Fin Test con ArraydbUsuario
     }
 
     @Test
