@@ -88,6 +88,10 @@ public class AdmUsuarioTest {
             System.out.println("\n");
         }
         
+        for(int x=0;x<dbUsuario.size();x++){
+            System.out.println("Bitacora (" + x + "): "  + dbUsuario.get(x).getBitacora().getUsCrea());
+        }
+        
 //        //DatosUsuarioBuscado
 //        if (AdmUsuarios.DatosUsuarioBuscado(usuarioDatos, dbUsuario)){
 //            System.out.println("El usuario " + usuarioBuscar + ", ya existe!!!!");
