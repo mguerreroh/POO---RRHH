@@ -88,5 +88,46 @@ public class RolTest {
        AdmRoles controladoraRoles = new AdmRoles();
        assertTrue(controladoraRoles.validaDescripcionRol(administrador));
    }
+
+   @Test
+   public void verificaBusquedaRol(){
+       Modulos.add(Tarea);
+       Modulos.add(Declaracion);
+       Modulos.add(Carta);
+       Modulos.add(Admin);
+       
+       ArrayList<Rol>aRoles = new ArrayList<Rol>();
+       
+       Rol administrador = new Rol("Admin","Rol de administrador",Modulos);
+       Rol digitador = new Rol("Digit", "Digitador", Modulos);
+       
+       aRoles.add(administrador);
+       aRoles.add(digitador);
+       
+       AdmRoles controladoraRoles = new AdmRoles();
+       assertEquals(true, controladoraRoles.buscaRol("Admin", aRoles));
+   }
    
+   @Test
+   public void verificaEliminaRol(){
+       Modulos.add(Tarea);
+       Modulos.add(Declaracion);
+       Modulos.add(Carta);
+       Modulos.add(Admin);
+       
+       ArrayList<Rol>aRoles = new ArrayList<Rol>();
+       
+       Rol administrador = new Rol("Admin","Rol de administrador",Modulos);
+       Rol digitador = new Rol("Digit", "Digitador", Modulos);
+       
+       aRoles.add(administrador);
+       aRoles.add(digitador);
+       
+       AdmRoles controladoraRoles = new AdmRoles();
+       //Elimina el Rol
+       controladoraRoles.eliminaRol("Digit", aRoles);
+       //Busca el Rol Eliminado
+       assertFalse(controladoraRoles.buscaRol("Digit", aRoles));
+       
+   }
 }
