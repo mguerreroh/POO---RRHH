@@ -38,4 +38,37 @@ public class AdminDeclaracion {
      return c;
     }
     
+    public boolean campoUsuarioVacio(String usuario){
+        if (usuario.trim().length()>0)
+            return false;
+        {
+        return true;
+    }
+    
+}
+    
+        public boolean campoMotivoVacio(String motivo){
+        if (motivo.trim().length()>0)
+            return false;
+        {
+            return true;
+        }
+    
+}
+        
+        public boolean campoFechaVencimientoVacio (String fechaVcmto){
+            if (fechaVcmto.trim().length()>0)
+                return false;
+            {
+                return true;
+            }
+        }
+        
+        public boolean validarStatusDeTarea (String status){
+            if(status.trim().length()>0)
+                return false;
+            {
+                return true;
+            }
+        }
 }
