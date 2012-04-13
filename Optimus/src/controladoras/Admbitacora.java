@@ -4,18 +4,17 @@
  */
 package controladoras;
 
-import java.util.ArrayList;
-import java.lang.String;
 import java.sql.Date;
+import java.util.ArrayList;
 import modelos.Bitacora;
 
 /**
  *
- * @author mguerrero
+ * @author HP
  */
- public class AdmBitacora {
-    
+public class AdmBitacora {
     private ArrayList<Bitacora> dbbitacora = new ArrayList<Bitacora>();
+    
     
     public boolean validarCorrelativo(Integer correlativo){
         if(correlativo != null){
@@ -37,4 +36,5 @@ import modelos.Bitacora;
         }
         return false;
     }
+    
 }
