@@ -20,8 +20,8 @@ public class Carta {
     private String comentario;
     private String status;
     private String Banco;
-     private String Tipo;
-     private double Importe;
+    private String Tipo;
+    private double Importe;
 
     public String getBanco() {
         return Banco;
@@ -59,15 +59,11 @@ public class Carta {
         this.Importe=importe;
         this.Tipo=tipo;
         this.Seleccion=seleccion;
-                
-         for (int i=0; i<users.size();i++)
-           {
-       this.Invitados.add(users.get(i));
-       }
+        for (int i=0; i<users.size();i++){
+            this.Invitados.add(users.get(i));
+        }
      
     }
-    
-    
     
     public ArrayList<Usuario> getInvitados() {
         return Invitados;

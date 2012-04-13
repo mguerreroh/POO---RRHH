@@ -35,6 +35,12 @@ public  void creaUsers()
        users.add(new Usuario("87074393", "Jose"   , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual )) ;
        users.add(new Usuario("67023343", "Pedro"   , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual )) ;
        users.add(new Usuario("12071193", "Carlos"   , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo",rol_actual )) ;
+       
+//                  for(int a=0;a<users.size();a++)
+//           {
+//           System.out.println( "Los usuario son: " + users );
+//          
+//           }
           }
   
 

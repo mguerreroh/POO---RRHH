@@ -22,6 +22,7 @@ public class Usuario {
     private String cargo;
     private Rol rol_actual;
 
+    public Usuario(){}
     public Usuario(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String password, String correo, String f_ingreso, String cargo, Rol rol) {
         this.dni = dni;
         this.nombre = nombre;

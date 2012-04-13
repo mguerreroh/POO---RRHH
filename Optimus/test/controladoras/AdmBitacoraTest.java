@@ -21,7 +21,8 @@ public class AdmBitacoraTest {
         System.out.println("El correlativo no debe de estar vacio");
     }
     
-    public void siNoingresoElUsCrea(){
+    @Test
+    public void siNoingresoLaFechaDebedarError(){
         assertFalse(admBitacora.validarFCrea(null));
         System.out.println("La fecha no debe de estar vacia");
     }
