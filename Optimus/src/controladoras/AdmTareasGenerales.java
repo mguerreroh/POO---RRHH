@@ -12,6 +12,10 @@ public class AdmTareasGenerales {
     TareasGenerales tg=null ;
     // inicializar la lista de objetos
     List<TareasGenerales> lstTareasGenerales = new ArrayList<TareasGenerales>();
+
+    public List<TareasGenerales> getLstTareasGenerales() {
+        return lstTareasGenerales;
+    }
     // creo un objeto en el constructor
     public AdmTareasGenerales() {
         

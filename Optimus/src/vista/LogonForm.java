@@ -4,19 +4,75 @@
  */
 package vista;
 
+import controladoras.AdmRoles;
+import controladoras.AdmTareasGenerales;
+import controladoras.AdmUsuarios;
+import java.awt.Frame;
+import javax.swing.JDesktopPane;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import modelos.Modulo;
+import modelos.Rol;
+import modelos.Usuario;
+
 /**
  *
  * @author alumnos
  */
-public class LogonForm extends javax.swing.JFrame {
+public class LogonForm extends javax.swing.JFrame{
 
-    /**
+    /*
      * Creates new form LogonForm
-     */
+     
+     */ 
+     AdmRoles objAdmRoles = new AdmRoles();
+     AdmUsuarios objAdmUsuarios = new AdmUsuarios();
+   
+     boolean valido =false;
+    
     public LogonForm() {
+        
+       
         initComponents();
-    }
 
+        objAdmRoles.agregarRolAdmin();
+        objAdmRoles.agregarRolOtro();
+        
+         for (int i=0; i<objAdmRoles.getRoles().size();i++){
+            System.out.println("Rol es: "  +objAdmRoles.getRoles().get(i).getNombre()); 
+                  } 
+    
+         Usuario usu1 =new Usuario("45074193", "Wolf","Boldt", "Boldt","Wolf","1234","wboldt@hotmail.com", "27/05/2011", "Asistente", objAdmRoles.getRoles().get(0),null);
+         Usuario usu2 =new Usuario("52627364", "Marcelino","Rojas", "Rojas","Marcelino","9999","magume@hotmail.com", "27/05/2011", "Asistente", objAdmRoles.getRoles().get(1),null);
+         Usuario usu3 =new Usuario("75756453", "Ricardo","Giron", "Giron","Ricardo","1111","ricky@hotmail.com", "27/05/2011", "Asistente", objAdmRoles.getRoles().get(0),null);
+         objAdmUsuarios.agregarUsuario(usu1);
+         objAdmUsuarios.agregarUsuario(usu2);
+         objAdmUsuarios.agregarUsuario(usu3);
+        
+         
+          for (int j=0; j<objAdmUsuarios.getDbUsuario().size();j++){
+            System.out.println("Usuario :  "   +objAdmUsuarios.getDbUsuario().get(j).getNombre()); 
+             System.out.println("Su Rol es  :  "  +objAdmUsuarios.getDbUsuario().get(j).getRol_actual().getNombre()); 
+        }
+
+        }
+    
+    public boolean validarUsuario(String nombreUsu, String passUsu){
+    
+       Usuario temp;
+       
+    for (int j=0; j<objAdmUsuarios.getDbUsuario().size();j++){
+        temp=objAdmUsuarios.getDbUsuario().get(j);
+      
+//        if ((nombreUsu.equals(temp.getUsuario())))    
+         if ( (nombreUsu.equals(objAdmUsuarios.getDbUsuario().get(j).getUsuario().toString())) && (passUsu.equals(objAdmUsuarios.getDbUsuario().get(j).getPassword())) )
+              valido=true;         
+    }
+   
+         return valido;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,15 +87,16 @@ public class LogonForm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         userLogon = new javax.swing.JTextField();
-        passwLogon = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jPasswordField1 = new javax.swing.JPasswordField();
 
         jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
         setBackground(new java.awt.Color(0, 51, 204));
+        setResizable(false);
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 formMouseClicked(evt);
@@ -47,6 +104,11 @@ public class LogonForm extends javax.swing.JFrame {
         });
 
         jButton1.setText("Ingresar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Usuario");
 
@@ -69,8 +131,9 @@ public class LogonForm extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(jLabel1))
@@ -79,18 +142,18 @@ public class LogonForm extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(jLabel4))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(passwLogon, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(userLogon, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(47, 47, 47))))
+                        .addGap(41, 41, 41)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(userLogon, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jPasswordField1))))
+                .addGap(59, 59, 59))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jLabel3))
+                .addComponent(jLabel3)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -99,7 +162,7 @@ public class LogonForm extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(userLogon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(passwLogon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(jButton1))
         );
@@ -114,6 +177,20 @@ private void userLogonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
 private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
 // TODO add your handling code here:
 }//GEN-LAST:event_formMouseClicked
+
+private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+// TODO add your handling code here:
+       
+         
+   if( validarUsuario(this.userLogon.getText(),this.jPasswordField1.getText()))
+   {JOptionPane.showMessageDialog(null, "Usuario Valido");
+     TareaGeneralesForm tuFrame = new TareaGeneralesForm(this,objAdmUsuarios);
+         tuFrame.show();
+   }
+       
+   else JOptionPane.showMessageDialog(null, "Usuario y/o password Invalidos");  
+  
+}//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,7 +240,7 @@ private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField passwLogon;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField userLogon;
     // End of variables declaration//GEN-END:variables
 }

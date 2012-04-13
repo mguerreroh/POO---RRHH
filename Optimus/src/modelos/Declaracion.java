@@ -156,5 +156,51 @@ public class Declaracion {
     public String getFechaRef() {
         return fechaRef;
     }
-  
-}
+   public boolean validarModifcacionesSiStatusEsAsignada(){
+          boolean modificar=false;   
+          
+          
+            if (this.getStatus().equals("ASIGNADA"))
+             modificar =true;
+                  
+         return modificar;
+       
+        }
+   
+   
+   public void pruebaModifica(int parametro, boolean asignacion, String nuevo){
+       if (asignacion==true){
+        switch (parametro)
+       {
+           case 1:  System.out.println("No se puede modificar");break;
+           case 2:  System.out.println("No se puede modificar");break;
+           case 3:  System.out.println("No se puede modificar");break;
+           case 4:  System.out.println("No se puede modificar");break;
+           case 5:  System.out.println("No se puede modificar");break;
+           case 6:  System.out.println("No se puede modificar");break;
+           case 7: {this.setPublicacion(nuevo); System.out.println("La Publicacion fue Modiciada a: "+nuevo);break;}
+           case 8:  System.out.println("No se puede modificar");break;
+                                        
+       }
+       
+       }
+       else
+       
+       {
+            switch (parametro)
+       {
+           case 1: {this.setCargo(nuevo);System.out.println("El Cargo fue Modiciado a: "+nuevo);break;}
+           case 2:{ this.setComentario(nuevo);System.out.println("El Comentario fue Modificado a: "+nuevo);break;}
+           case 3: {this.setFechaAsump(nuevo);System.out.println("La Fecha fue Modificada a: "+nuevo);break;}
+           case 4: {this.setFechaRef(nuevo);System.out.println("La Fecha fue Modificada a: "+nuevo);break;}
+           case 5: {this.setFechaDoc(nuevo);System.out.println("La Fecha fue Modificada a: "+nuevo);break;}
+           case 6: {this.setTipo(nuevo);System.out.println("El tipo fue Modificado a: "+nuevo);break;}
+           case 7:{ this.setPublicacion(nuevo);System.out.println("La Publicacion fue Modificada a: "+nuevo);break;}
+           case 8: {this.setNroDoc(nuevo);System.out.println("El nro de doc fue Modificado a: "+nuevo);break;}
+                                        
+       }
+       }
+   }
+       
+   }
+

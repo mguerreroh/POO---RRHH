@@ -4,6 +4,7 @@
  */
 package controladoras;
 
+import java.io.IOException;
 import modelos.Rol;
 import modelos.Usuario;
 import modelos.TareasGenerales;
@@ -15,6 +16,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import controladoras.TestGeneral;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 public class AdminDeclaracionTest{
     AdminDeclaracion objAdminDeclaracion = null;
@@ -195,7 +198,7 @@ public class AdminDeclaracionTest{
 //        dbUsuario.add(new Usuario("88888888", "Alex"     ,"Segovia" ,"Segovia"  ,"asegovia" ,"asegovia" ,"asegovia@optimus.net" ,"16/02/2012","cargo1",rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
 //        dbUsuario.add(new Usuario("09534044", "Marcelino","Guerrero","Cordova"  ,"mguerrero","mguerrero","mguerrero@optimus.net","16/02/2012","cargo1",rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
    
-<<<<<<< HEAD
+
         Usuario resp=dbUsuario.get(0);
         dbUsuario.remove(0);
         Declaracion tg1= new Declaracion(resp, "CREAR RESOLUCION MENSUAL","10/10/2012","Comentario","ASIGNADA", dbUsuario,"Cargo 20","Publicacion 2","Doc2","23/10/2012","10/10/2012","10/10/2012");
@@ -212,7 +215,7 @@ public class AdminDeclaracionTest{
         System.out.println();
     }
     @Test
-    public void siStatusEsAsignadaNoSePuedeModificarCampoResponsable(){
+    public void siStatusEsAsignadaNoSePuedeModificarCampoResponsable() {
         dbUsuario.add(new Usuario("06109064", "Ricardo"  ,"Giron"   ,"Salas"    ,"rgiron"   ,"rgiron"   ,"rgiron@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
         dbUsuario.add(new Usuario("99999999", "Wolfgang" ,"Boldt"   ,"De Rivero","wboldt"   ,"wboldt"   ,"wboldt@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
         dbUsuario.add(new Usuario("88888888", "Alex"     ,"Segovia" ,"Segovia"  ,"asegovia" ,"asegovia" ,"asegovia@optimus.net" ,"16/02/2012","cargo1",rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
@@ -221,20 +224,33 @@ public class AdminDeclaracionTest{
         Usuario resp=dbUsuario.get(0);
         dbUsuario.remove(0);
         Declaracion tg1= new Declaracion(resp, "CREAR RESOLUCION MENSUAL","10/10/2012","Comentario","ASIGNADA", dbUsuario,"Cargo 20","Publicacion 2","Doc2","23/10/2012","10/10/2012","10/10/2012");
-=======
-        Usuario resp = dbUsuario.get(0);
-        //dbUsuario.remove(0);
-        ArrayList<Usuario> dbInvitado5 = new ArrayList<Usuario>();
-        dbInvitado5.add(dbUsuario.get(2));
-        dbInvitado5.add(dbUsuario.get(1));
+        boolean asignacion=false;
+    
+     
+
+      
+
         
-        Declaracion tg1= new Declaracion(resp, "CREAR RESOLUCION MENSUAL","10/10/2012","Comentario","EN PROCESO", dbInvitado5,"Cargo 20","Publicacion 2","Doc2","23/10/2012","10/10/2012","10/10/2012");
->>>>>>> 6063a94d3bfad7121b7a87bc9f46b3a39c381042
         
-        //test
-        assertFalse(admDeclaracion.validarStatusDeTarea(tg1.getStatus()));
-//        assertFalse(admDeclaracion.campoMotivoVacio(""));
-        //resultado en pantalla
+        asignacion=tg1.validarModifcacionesSiStatusEsAsignada();
+        
+//            System.out.println("-------------------------------------------------");
+//            System.out.println("Escoger que campo desea modificar");
+//            System.out.println("1. Cargo");
+//            System.out.println("2. Comentario");
+//            System.out.println("3. Fecha de Asumpcion");
+//            System.out.println("4. Fecha de Referencia");
+//            System.out.println("5. Fecha de Documento");
+//            System.out.println("6. Tipo");
+//            System.out.println("7. Publicacion");
+//            System.out.println("8. Nro de Documento");
+////           System.in.read(parametro);
+           
+        String lineRead;
+             System.out.println(""+asignacion);
+           tg1.pruebaModifica(7, asignacion, "Nuevo Dato");
+            
+
         System.out.println("-------------------------------------------------");
         System.out.println("Test: siTareaSeConfirmoSoloSePuedeModificarCampoPublicar");
         System.out.println("-------------------------------------------------");
