@@ -4,11 +4,11 @@
  */
 package controladoras;
 
+import java.text.DateFormat;
 import modelos.Rol;
 import modelos.Usuario;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Calendar;
 import modelos.Bitacora;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -29,6 +29,9 @@ public class AdmUsuarioTest {
         RolTest test= new RolTest();
         test.crearRol();
         Rol rol_actual=test.getRolActual();
+        
+        DateFormat formateador = DateFormat.getInstance();
+        System.out.println("Fecha de hoy-->" + formateador.format(date));
         
         Usuario user1 = new Usuario("09534044", "Zadith", "Guerrero", "Cordova", "zguerrero", "zguerrero", "zguerrero@", null, "cargo", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", ""));
         System.out.println("*----- Inicio verificacion Usuario :" + user1.getUsuario() + " -----*");
