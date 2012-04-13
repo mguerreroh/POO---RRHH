@@ -2,13 +2,12 @@
 package controladoras;
 
 import java.util.ArrayList;
-import java.util.List;
-import modelos.Bitacora;
 import modelos.Rol;
 import modelos.TareasGenerales;
 import modelos.Usuario;
 import static org.junit.Assert.*;
 import org.junit.Test;
+import modelos.Bitacora;
 
 
 public class TareasGeneralesTest {
@@ -18,27 +17,22 @@ public class TareasGeneralesTest {
  RolTest test= new RolTest();
  //test.crearRol();
  Rol rol_actual=test.getRolActual();
-   
-//    @Test
-//    public  void creaUsers(){
-//        users.add(new Usuario("45074193","Juan","apellidoPaterno","apellidoMaterno","usuario","password","correo", null,"cargo",rol_actual));  
-//        users.add(new Usuario("87074393","Jose","apellidoPaterno","apellidoMaterno","usuario","password","correo", null,"cargo",rol_actual));
-//        users.add(new Usuario("67023343","Pedro","apellidoPaterno","apellidoMaterno","usuario","password","correo", null,"cargo",rol_actual));
-//        users.add(new Usuario("12071193","Carlos","apellidoPaterno","apellidoMaterno","usuario","password","correo", null,"cargo",rol_actual));
-//    }
-  
-    @Test
-    public void crearTarea() {  
-//        users.add(new Usuario("45074193","Juan"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual)); 
-//        users.add(new Usuario("87074393","Jose"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
-//        users.add(new Usuario("67023343","Pedro" ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
-//        users.add(new Usuario("12071193","Carlos","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
-        
+
+ 
+
+    public void simularTabla(){
         dbUsuario.add(new Usuario("06109064", "Ricardo",   "Giron",        "Salas",    "rgiron",    "rgiron",    "rgiron@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
         dbUsuario.add(new Usuario("99999999", "Wolfgang",  "Boldt",    "De Rivero",    "wboldt",    "wboldt",    "wboldt@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
         dbUsuario.add(new Usuario("88888888", "Alex",      "Segovia",    "Segovia",  "asegovia",  "asegovia",  "asegovia@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
         dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
-      
+    }
+ 
+  
+    @Test
+    public void crearTarea() {  
+        
+        this.simularTabla();
+        
         Usuario resp=dbUsuario.get(0);
         
         ArrayList<Usuario> dbInvitado = new ArrayList<Usuario>();
@@ -65,19 +59,13 @@ public class TareasGeneralesTest {
     
     @Test
     public void TestAdmin(){
-       dbUsuario.add(new Usuario("06109064", "Ricardo",   "Giron",        "Salas",    "rgiron",    "rgiron",    "rgiron@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
-       dbUsuario.add(new Usuario("99999999", "Wolfgang",  "Boldt",    "De Rivero",    "wboldt",    "wboldt",    "wboldt@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
-       dbUsuario.add(new Usuario("88888888", "Alex",      "Segovia",    "Segovia",  "asegovia",  "asegovia",  "asegovia@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
-       dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
+       
+       this.simularTabla();
       
        Usuario resp=dbUsuario.get(0);
        ArrayList<Usuario> dbInvitado = new ArrayList<Usuario>();
        dbInvitado.add(dbUsuario.get(1));
        dbInvitado.add(dbUsuario.get(2));
-//       dbUsuario.remove(0);
-    
-//   llama a la clase controladora
-//   AdmTareasGenerales  objAdminTareasGenerales = new AdmTareasGenerales();
         
        TareasGenerales tg1= new TareasGenerales(resp,"CREAR RESOLUCION MENSUAL","10/10/2012","Comentario","EN PROCESO",dbInvitado);
        lstTareasGenerales.add(tg1);
@@ -103,10 +91,8 @@ public class TareasGeneralesTest {
     
     @Test
     public void campoAsuntoNoDebeEstaVacio(){
-        dbUsuario.add(new Usuario("06109064", "Ricardo",   "Giron",        "Salas",    "rgiron",    "rgiron",    "rgiron@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("99999999", "Wolfgang",  "Boldt",    "De Rivero",    "wboldt",    "wboldt",    "wboldt@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("88888888", "Alex",      "Segovia",    "Segovia",  "asegovia",  "asegovia",  "asegovia@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
+
+        this.simularTabla();
       
         Usuario resp=dbUsuario.get(0);
         ArrayList<Usuario> dbInvitado = new ArrayList<Usuario>();
@@ -127,10 +113,8 @@ public class TareasGeneralesTest {
     
     @Test
     public void campoFechaVctoNoDebeEstaVacio(){
-        dbUsuario.add(new Usuario("06109064", "Ricardo",   "Giron",        "Salas",    "rgiron",    "rgiron",    "rgiron@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("99999999", "Wolfgang",  "Boldt",    "De Rivero",    "wboldt",    "wboldt",    "wboldt@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("88888888", "Alex",      "Segovia",    "Segovia",  "asegovia",  "asegovia",  "asegovia@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
+        
+        this.simularTabla();
       
         Usuario resp=dbUsuario.get(0);
         ArrayList<Usuario> dbInvitado = new ArrayList<Usuario>();
@@ -150,10 +134,8 @@ public class TareasGeneralesTest {
     
     @Test
     public void campoResponsableNoDebeEstaVacio(){
-        dbUsuario.add(new Usuario("06109064", "Ricardo",   "Giron",        "Salas",    "rgiron",    "rgiron",    "rgiron@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("99999999", "Wolfgang",  "Boldt",    "De Rivero",    "wboldt",    "wboldt",    "wboldt@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("88888888", "Alex",      "Segovia",    "Segovia",  "asegovia",  "asegovia",  "asegovia@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
+        
+        this.simularTabla();
       
         Usuario resp=dbUsuario.get(0);
         ArrayList<Usuario> dbInvitado = new ArrayList<Usuario>();
@@ -172,10 +154,8 @@ public class TareasGeneralesTest {
     
     @Test
     public void siTareaFueAsignadaNoSePodráModificar(){
-        dbUsuario.add(new Usuario("06109064", "Ricardo",   "Giron",        "Salas",    "rgiron",    "rgiron",    "rgiron@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("99999999", "Wolfgang",  "Boldt",    "De Rivero",    "wboldt",    "wboldt",    "wboldt@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("88888888", "Alex",      "Segovia",    "Segovia",  "asegovia",  "asegovia",  "asegovia@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
+        
+        this.simularTabla();
       
         Usuario resp=dbUsuario.get(0);
         ArrayList<Usuario> dbInvitado = new ArrayList<Usuario>();
@@ -194,10 +174,8 @@ public class TareasGeneralesTest {
     
     @Test
     public void siTareaNoFueAsignadaSePodraModificar(){
-        dbUsuario.add(new Usuario("06109064", "Ricardo",   "Giron",        "Salas",    "rgiron",    "rgiron",    "rgiron@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("99999999", "Wolfgang",  "Boldt",    "De Rivero",    "wboldt",    "wboldt",    "wboldt@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("88888888", "Alex",      "Segovia",    "Segovia",  "asegovia",  "asegovia",  "asegovia@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
-        dbUsuario.add(new Usuario("09534044", "Marcelino", "Guerrero",   "Cordova", "mguerrero", "mguerrero", "mguerrero@optimus.net", "16/02/2012", "cargo1", rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
+        
+        this.simularTabla();
       
         Usuario resp=dbUsuario.get(0);
         ArrayList<Usuario> dbInvitado = new ArrayList<Usuario>();

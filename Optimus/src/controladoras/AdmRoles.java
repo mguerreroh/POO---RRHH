@@ -107,4 +107,33 @@ public boolean validaDescripcionRol(Rol unRol){
             }
         return llOk;
     }
+
+    public boolean buscaRol(String rol, ArrayList<Rol> dbRol){
+        boolean encuentra=false;
+        for(int x=0;x<dbRol.size();x++){
+            if(dbRol.get(x).getNombre().equals(rol)){
+                System.out.println("Rol encontrado :" + dbRol.get(x).getNombre() + " " + dbRol.get(x).getDescrip());
+                encuentra = true;
+                break;
+            }
+        }
+        return encuentra;
+    }
+    
+    public void eliminaRol(String rol, ArrayList<Rol> dbRol){
+        boolean encontrado=false;
+        for(int x=0;x<dbRol.size();x++){
+            if(dbRol.get(x).getNombre().equals(rol)){
+                encontrado=true;
+                System.out.println("Rol será eliminado :" + dbRol.get(x).getNombre() + " " + dbRol.get(x).getDescrip());
+                dbRol.remove(x);
+                break;
+                }
+
+            }
+        if(encontrado==false){
+            System.out.println("Rol " + rol + " no fue encontrado");
+        }
+        
+    }
 }
