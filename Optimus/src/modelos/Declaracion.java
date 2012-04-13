@@ -6,10 +6,7 @@ package modelos;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Juanfra
- */
+
 public class Declaracion {
     
     
@@ -22,7 +19,6 @@ public class Declaracion {
     private String NroDoc;
     private String Publicacion;
     private String asunto;
-  
     private String fechaVcmto;
     private String comentario;
     private String status;

@@ -2,7 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-//prueba2
 package controladoras;
 
 import java.util.ArrayList;
@@ -24,36 +23,37 @@ public class AdmRoles {
   public void agregarRolAdmin(){
       
   Modulo Tarea = new Modulo("Tarea",true,true,true,true);
-    Modulo Declaracion = new Modulo("Declaracion",true,true,true,true);
-    Modulo Carta = new Modulo("Carta",true,true,true,true);
-    Modulo Usu = new Modulo("Admin",true,true,true,true); 
-   Modulo Roles = new Modulo("Roles",true,true,true,true); 
+  Modulo Declaracion = new Modulo("Declaracion",true,true,true,true);
+  Modulo Carta = new Modulo("Carta",true,true,true,true);
+  Modulo Usu = new Modulo("Admin",true,true,true,true); 
+  Modulo Roles = new Modulo("Roles",true,true,true,true); 
     
-    ArrayList<Modulo> mods = new ArrayList<Modulo>();
-     mods.add(Tarea);
-    mods.add(Declaracion);
-    mods.add(Carta);
-    mods.add(Usu);
+  ArrayList<Modulo> mods = new ArrayList<Modulo>();
+  mods.add(Tarea);
+  mods.add(Declaracion);
+  mods.add(Carta);
+  mods.add(Usu);
                 
-      Rol nuevo_rol=new Rol ("Admin", "El que admionistra el Sistema", mods);
-     roles.add(nuevo_rol);
+  Rol nuevo_rol=new Rol ("Admin", "El que admionistra el Sistema", mods);
+    roles.add(nuevo_rol);
   }
-  public void agregarRolOtro(){
+  
+public void agregarRolOtro(){
       
-  Modulo Tarea = new Modulo("Tarea",true,true,true,true);
+    Modulo Tarea = new Modulo("Tarea",true,true,true,true);
     Modulo Declaracion = new Modulo("Declaracion",true,true,true,true);
     Modulo Carta = new Modulo("Carta",true,true,true,true);
     Modulo Usu = new Modulo("Admin",true,true,true,true); 
-   Modulo Roles = new Modulo("Roles",true,true,true,true); 
+    Modulo Roles = new Modulo("Roles",true,true,true,true); 
     
     ArrayList<Modulo> mods = new ArrayList<Modulo>();
-     mods.add(Tarea);
+    mods.add(Tarea);
     mods.add(Declaracion);
     mods.add(Carta);
     mods.add(Usu);
                 
-      Rol nuevo_rol=new Rol ("Otro", "Rol Normal del Sistema", mods);
-     roles.add(nuevo_rol);
+    Rol nuevo_rol=new Rol ("Otro", "Rol Normal del Sistema", mods);
+        roles.add(nuevo_rol);
   }
         
 //        private Modulo Tarea = new Modulo(null,false,true,true,true);
@@ -63,13 +63,12 @@ public class AdmRoles {
 //   
 //        private ArrayList<Modulo> Modulos = new ArrayList<Modulo>();
 
-    public boolean validaNombreRol(Rol unRol){
+public boolean validaNombreRol(Rol unRol){
         
         //Valida que el Rol no tenga un nulo en el nombre o vacio
         //recibe un objeto de tipo rol
         
-        boolean llOk=true;
-        
+    boolean llOk=true;        
         for(int i=0; i<unRol.getModulos().size();i++){
             if(unRol.getModulos().get(i).getNombre() == null || unRol.getModulos().get(i).getNombre().equals("")){
                 llOk = false;
@@ -78,12 +77,11 @@ public class AdmRoles {
         return llOk;
     }
     
-    public boolean validaEstadoRol(Rol unRol){
+public boolean validaEstadoRol(Rol unRol){
         //Valida que el Rol no tenga un nulo en alguno de los permisos
         //recibe un objeto de tipo rol
         
-        boolean llOk = true;
-        
+    boolean llOk = true;
         for(int i=0; i<unRol.getModulos().size();i++){
             if(unRol.getModulos().get(i).getAcceso() == null){
                 llOk = false;
@@ -98,17 +96,15 @@ public class AdmRoles {
         return llOk;
     }
     
-    public boolean validaDescripcionRol(Rol unRol){
+public boolean validaDescripcionRol(Rol unRol){
         
         //Valida que el Rol no tenga un nulo en la descripción o vacio
         //recibe un objeto de tipo rol
         
-        boolean llOk=true;
-        
+    boolean llOk=true;    
         if(unRol.getDescrip() == null || unRol.getDescrip().equals("")){
                 llOk = false;
             }
-        
         return llOk;
     }
 }

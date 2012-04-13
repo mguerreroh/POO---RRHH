@@ -9,13 +9,10 @@ import java.util.List;
 import modelos.Carta;
 import modelos.Usuario;
 
-/**
- *
- * @author Juanfra
- */
+
 public class AdminCarta {
     
-     Carta c=null ;
+    Carta c=null ;
     // inicializar la lista de objetos
     List<Carta> lstCartas = new ArrayList<Carta>();
 
@@ -29,13 +26,11 @@ public class AdminCarta {
    
     // Metodo para agregar una tarea
     public Carta agregarTarea(Usuario user, String asunto, String fecha, String dni, String comentario, ArrayList<Carta> tareas){
-        c = new Carta();
-        
+        c = new Carta(); 
         c.setAsunto(asunto);
         c.setFechaVcmto(fecha);
         c.setComentario(comentario);
-        c.setResponsable(user);
- 
+        c.setResponsable(user); 
         c.setStatus(null);
         c.setInvitados(null);
         

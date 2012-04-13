@@ -35,17 +35,14 @@ public class AdmUsuarios {
     }
         
       
-        public Usuario getUsu_nombre(String nombre) {
+    public Usuario getUsu_nombre(String nombre) {
         Usuario temp=null;
-          for (int i=0; i<dbUsuario.size();i++)
-           {
+            for (int i=0; i<dbUsuario.size();i++){
                 if (nombre.equals(dbUsuario.get(i).getNombre()))
                     temp=dbUsuario.get(i);
                     break;
-       }
-        
-         
-            return temp;
+            }
+        return temp;
     }
         
     //private ArrayList<Usuario> dbUsuarios = new ArrayList<Usuario>();

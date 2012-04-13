@@ -6,10 +6,7 @@ package modelos;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Juanfra
- */
+
 public class Carta {
     
     

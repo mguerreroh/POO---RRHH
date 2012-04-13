@@ -28,9 +28,9 @@ public class TareasGeneralesTest {
   
     @Test
     public void crearTarea() {  
-        users.add(new Usuario("45074193","Juan","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual)); 
-        users.add(new Usuario("87074393","Jose","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
-        users.add(new Usuario("67023343","Pedro","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
+        users.add(new Usuario("45074193","Juan"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual)); 
+        users.add(new Usuario("87074393","Jose"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
+        users.add(new Usuario("67023343","Pedro" ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
         users.add(new Usuario("12071193","Carlos","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
       
         Usuario resp=users.get(0);
@@ -54,9 +54,9 @@ public class TareasGeneralesTest {
     
     @Test
     public void TestAdmin(){
-       users.add(new Usuario("45074193","Juan","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));  
-       users.add(new Usuario("87074393","Jose","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
-       users.add(new Usuario("67023343","Pedro","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
+       users.add(new Usuario("45074193","Juan"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));  
+       users.add(new Usuario("87074393","Jose"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
+       users.add(new Usuario("67023343","Pedro" ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
        users.add(new Usuario("12071193","Carlos","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
       
        Usuario resp=users.get(0);
@@ -89,9 +89,9 @@ public class TareasGeneralesTest {
     
     @Test
     public void campoAsuntoNoDebeEstaVacio(){
-        users.add(new Usuario("45074193","Juan","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual)); 
-        users.add(new Usuario("87074393","Jose","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
-        users.add(new Usuario("67023343","Pedro","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
+        users.add(new Usuario("45074193","Juan"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual)); 
+        users.add(new Usuario("87074393","Jose"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
+        users.add(new Usuario("67023343","Pedro" ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
         users.add(new Usuario("12071193","Carlos","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
       
         Usuario resp=users.get(0);
@@ -108,9 +108,9 @@ public class TareasGeneralesTest {
     
     @Test
     public void campoFechaVctoNoDebeEstaVacio(){
-        users.add(new Usuario("45074193","Juan","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual)); 
-        users.add(new Usuario("87074393","Jose","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
-        users.add(new Usuario("67023343","Pedro","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
+        users.add(new Usuario("45074193","Juan"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual)); 
+        users.add(new Usuario("87074393","Jose"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
+        users.add(new Usuario("67023343","Pedro" ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
         users.add(new Usuario("12071193","Carlos","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
       
         Usuario resp=users.get(0);
@@ -127,9 +127,9 @@ public class TareasGeneralesTest {
     
     @Test
     public void campoResponsableNoDebeEstaVacio(){
-        users.add(new Usuario("45074193","Juan","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual)); 
-        users.add(new Usuario("87074393","Jose","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
-        users.add(new Usuario("67023343","Pedro","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
+        users.add(new Usuario("45074193","Juan"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual)); 
+        users.add(new Usuario("87074393","Jose"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
+        users.add(new Usuario("67023343","Pedro" ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
         users.add(new Usuario("12071193","Carlos","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
       
         Usuario resp=users.get(0);
@@ -145,9 +145,9 @@ public class TareasGeneralesTest {
     
     @Test
     public void siTareaFueAsignadaNoSePodráModificar(){
-        users.add(new Usuario("45074193","Juan","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual)); 
-        users.add(new Usuario("87074393","Jose","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
-        users.add(new Usuario("67023343","Pedro","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
+        users.add(new Usuario("45074193","Juan"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual)); 
+        users.add(new Usuario("87074393","Jose"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
+        users.add(new Usuario("67023343","Pedro" ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
         users.add(new Usuario("12071193","Carlos","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
       
         Usuario resp=users.get(0);
@@ -163,9 +163,9 @@ public class TareasGeneralesTest {
     
     @Test
     public void siTareaNoFueAsignadaSePodraModificar(){
-        users.add(new Usuario("45074193","Juan","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual)); 
-        users.add(new Usuario("87074393","Jose","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
-        users.add(new Usuario("67023343","Pedro","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
+        users.add(new Usuario("45074193","Juan"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual)); 
+        users.add(new Usuario("87074393","Jose"  ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
+        users.add(new Usuario("67023343","Pedro" ,"apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
         users.add(new Usuario("12071193","Carlos","apellidoPaterno","apellidoMaterno","usuario","password","correo",null,"cargo",rol_actual));
       
         Usuario resp=users.get(0);

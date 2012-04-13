@@ -55,7 +55,6 @@ public class Usuario {
     public void setRol_actual(Rol rol_actual) {
         this.rol_actual = rol_actual;
     }
-    
 
     public String getCorreo() {
         return correo;
