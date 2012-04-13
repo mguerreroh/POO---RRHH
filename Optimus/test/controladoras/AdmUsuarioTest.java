@@ -158,7 +158,7 @@ public class AdmUsuarioTest {
     @Test
     public void siNoIngresaCodigoRolDebeDarError(){
         assertFalse(admUsuarios.validarCodigoRol(null));
-         System.out.println("El rol no debe de estar vacio");
+        System.out.println("El rol no debe de estar vacio");
     }
     
     //Faltan validaciones de Usuarios

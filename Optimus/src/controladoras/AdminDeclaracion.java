@@ -10,10 +10,7 @@ import modelos.Carta;
 import modelos.Declaracion;
 import modelos.Usuario;
 
-/**
- *
- * @author Juanfra
- */
+
 public class AdminDeclaracion {
     
       Declaracion c=null ;
@@ -30,13 +27,11 @@ public class AdminDeclaracion {
    
     // Metodo para agregar una tarea
     public Declaracion agregarTarea(Usuario user, String asunto, String fecha, String dni, String comentario, ArrayList<Declaracion> tareas){
-        c = new Declaracion();
-        
+        c = new Declaracion();  
         c.setAsunto(asunto);
         c.setFechaVcmto(fecha);
         c.setComentario(comentario);
-        c.setResponsable(user);
- 
+        c.setResponsable(user); 
         c.setStatus(null);
         c.setInvitados(null);
         

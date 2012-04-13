@@ -36,12 +36,21 @@ public class AdmUsuarios {
       
     public Usuario getUsu_nombre(String nombre) {
         Usuario temp=null;
+<<<<<<< HEAD
         for (int i=0; i<dbUsuario.size();i++){
             if (nombre.equals(dbUsuario.get(i).getNombre()))
                 temp=dbUsuario.get(i);
                 break;
        }
             return temp;
+=======
+            for (int i=0; i<dbUsuario.size();i++){
+                if (nombre.equals(dbUsuario.get(i).getNombre()))
+                    temp=dbUsuario.get(i);
+                    break;
+            }
+        return temp;
+>>>>>>> 72db029748fcc4482102b22eba32f915e2c48f68
     }
 
     /*<< - USUARIO - >>*/
