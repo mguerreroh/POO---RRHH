@@ -6,12 +6,10 @@ package controladoras;
 
 import modelos.Rol;
 import modelos.Usuario;
-import controladoras.AdmUsuarios;
-import java.text.ParseException;
 import java.util.ArrayList;
 import modelos.*;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import controladoras.AdmUsuarios;
 
 /**
  *
@@ -73,6 +71,10 @@ public class TestGeneral {
         xAdminDeclaracionTest.campoMotivoDebeContenerDato();
         xAdminDeclaracionTest.campoFechaDeVencimientoDebeContenerDato();
         xAdminDeclaracionTest.siTareaSeConfirmoSoloSePuedeModificarCampoPublicar();
+        xAdminDeclaracionTest.siTareaSeConfirmoSoloSePuedeModificarCampoPublicar();
+        xAdminDeclaracionTest.siStatusEsAsignadaNoSePuedeModificarCampoResponsable();
+        
+
         
     }
         

@@ -43,13 +43,6 @@ public class AdmUsuarios {
        }
        return temp;
     }
-//            for (int i=0; i<dbUsuario.size();i++){
-//                if (nombre.equals(dbUsuario.get(i).getNombre()))
-//                    temp=dbUsuario.get(i);
-//                    break;
-//            }
-//        return temp;
-//    }
 
     /*<< - USUARIO - >>*/
     public boolean verificarUsuario(String user){

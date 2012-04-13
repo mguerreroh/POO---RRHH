@@ -203,6 +203,7 @@ public class AdmUsuarioTest {
         System.out.println("Esta es una fecha de prueba 2" + admUsuarios.convertirFecha("29/01/2012"));
         System.out.println("Esta es una fecha de prueba 3" + admUsuarios.convertirFecha("30/01/2012"));
     }
+    
     /*
     @Test
     public void testear() throws ParseException{
