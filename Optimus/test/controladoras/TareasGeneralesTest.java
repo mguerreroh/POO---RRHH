@@ -8,6 +8,7 @@ import modelos.Usuario;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import modelos.Bitacora;
+import controladoras.TestGeneral;
 
 
 public class TareasGeneralesTest {
@@ -32,6 +33,9 @@ public class TareasGeneralesTest {
     public void crearTarea() {  
         
         this.simularTabla();
+//        System.out.println(TestGeneral.dbUsuarioX.get(0).getNombre());
+        //dbUsuario.add(TestGeneral.dbUsuarioX.get(1));
+        //dbUsuario.add(TestGeneral.dbUsuarioX.get(2));
         
         Usuario resp=dbUsuario.get(0);
         
