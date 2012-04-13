@@ -31,7 +31,7 @@ public class AdmUsuarioTest {
         Rol rol_actual=test.getRolActual();
         
         DateFormat formateador = DateFormat.getInstance();
-        System.out.println("Fecha de hoy-->" + formateador.format(date));
+        //System.out.println("Fecha de hoy-->" + formateador.format(date));
         
         Usuario user1 = new Usuario("09534044", "Zadith", "Guerrero", "Cordova", "zguerrero", "zguerrero", "zguerrero@", null, "cargo", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", ""));
         System.out.println("*----- Inicio verificacion Usuario :" + user1.getUsuario() + " -----*");
