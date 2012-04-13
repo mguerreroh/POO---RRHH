@@ -183,7 +183,7 @@ public class AdminDeclaracionTest{
    
         Usuario resp=dbUsuario.get(0);
         dbUsuario.remove(0);
-        Declaracion tg1= new Declaracion(resp, "CREAR RESOLUCION MENSUAL","10/10/2012","Comentario","EN PROCESO", dbUsuario,"Cargo 20","Publicacion 2","Doc2","23/10/2012","10/10/2012","10/10/2012");
+        Declaracion tg1= new Declaracion(resp, "CREAR RESOLUCION MENSUAL","10/10/2012","Comentario","ASIGNADA", dbUsuario,"Cargo 20","Publicacion 2","Doc2","23/10/2012","10/10/2012","10/10/2012");
         
         //test
         assertFalse(admDeclaracion.validarStatusDeTarea(tg1.getStatus()));
@@ -192,7 +192,29 @@ public class AdminDeclaracionTest{
         System.out.println("-------------------------------------------------");
         System.out.println("Test: siTareaSeConfirmoSoloSePuedeModificarCampoPublicar");
         System.out.println("-------------------------------------------------");
-        System.out.println("El status de la tarea es: "+tg1.getStatus()+" y no se puede eliminar, solo publicar");
+        System.out.println("El status de la tarea es: "+tg1.getStatus()+" y no se puede modificar ningún campo, solo publicar");
+        System.out.println("--- FIN TEST ---");
+        System.out.println();
+    }
+    @Test
+    public void siStatusEsAsignadaNoSePuedeModificarCampoResponsable(){
+        dbUsuario.add(new Usuario("06109064", "Ricardo"  ,"Giron"   ,"Salas"    ,"rgiron"   ,"rgiron"   ,"rgiron@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("99999999", "Wolfgang" ,"Boldt"   ,"De Rivero","wboldt"   ,"wboldt"   ,"wboldt@optimus.net"   ,"16/02/2012","cargo1",rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("88888888", "Alex"     ,"Segovia" ,"Segovia"  ,"asegovia" ,"asegovia" ,"asegovia@optimus.net" ,"16/02/2012","cargo1",rol_actual, new Bitacora(3,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("09534044", "Marcelino","Guerrero","Cordova"  ,"mguerrero","mguerrero","mguerrero@optimus.net","16/02/2012","cargo1",rol_actual, new Bitacora(4,"Adm", "12/04/2012", "", "")));
+   
+        Usuario resp=dbUsuario.get(0);
+        dbUsuario.remove(0);
+        Declaracion tg1= new Declaracion(resp, "CREAR RESOLUCION MENSUAL","10/10/2012","Comentario","ASIGNADA", dbUsuario,"Cargo 20","Publicacion 2","Doc2","23/10/2012","10/10/2012","10/10/2012");
+        
+        //test
+        assertFalse(admDeclaracion.validarStatusDeTarea(tg1.getStatus()));
+//        assertFalse(admDeclaracion.campoMotivoVacio(""));
+        //resultado en pantalla
+        System.out.println("-------------------------------------------------");
+        System.out.println("Test: siTareaSeConfirmoSoloSePuedeModificarCampoPublicar");
+        System.out.println("-------------------------------------------------");
+        System.out.println("El status de la tarea es: "+tg1.getStatus()+" y no se puede modificar ningún campo, solo publicar");
         System.out.println("--- FIN TEST ---");
         System.out.println();
     }
