@@ -21,9 +21,10 @@ public class Usuario {
     private String f_ingreso;
     private String cargo;
     private Rol rol_actual;
+    private Bitacora bitacora_actual;
 
     public Usuario(){}
-    public Usuario(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String password, String correo, String f_ingreso, String cargo, Rol rol) {
+    public Usuario(String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String usuario, String password, String correo, String f_ingreso, String cargo, Rol rol, Bitacora bita) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
@@ -34,6 +35,7 @@ public class Usuario {
         this.f_ingreso = f_ingreso;
         this.cargo = cargo;
         this.rol_actual=rol;
+        this.bitacora_actual=bita;
     }
 
     public String getApellidoMaterno() {
@@ -56,6 +58,13 @@ public class Usuario {
         this.rol_actual = rol_actual;
     }
     
+    public Bitacora getBitacora() {
+        return bitacora_actual;
+    }
+
+    public void setBitacora(Bitacora bitacora) {
+        this.bitacora_actual = bitacora_actual;
+    }
 
     public String getCorreo() {
         return correo;

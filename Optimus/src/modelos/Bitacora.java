@@ -13,12 +13,12 @@ import java.util.Date;
 public class Bitacora {
     private Integer correlativo;
     private String usCrea;
-    private Date fCrea;
+    private String fCrea;
     private String usModifica;
-    private Date fModifica;
+    private String fModifica;
     private String codigoModulo = "ADMBIT";
 
-    public Bitacora(Integer correlativo, String usCrea, Date fCrea, String usModifica, Date fModifica) {
+    public Bitacora(Integer correlativo, String usCrea, String fCrea, String usModifica, String fModifica) {
         this.correlativo = correlativo;
         this.usCrea = usCrea;
         this.fCrea = fCrea;
@@ -34,11 +34,11 @@ public class Bitacora {
         return correlativo;
     }
 
-    public Date getfCrea() {
+    public String getfCrea() {
         return fCrea;
     }
 
-    public Date getfModifica() {
+    public String getfModifica() {
         return fModifica;
     }
 
@@ -58,11 +58,11 @@ public class Bitacora {
         this.correlativo = correlativo;
     }
 
-    public void setfCrea(Date fCrea) {
+    public void setfCrea(String fCrea) {
         this.fCrea = fCrea;
     }
 
-    public void setfModifica(Date fModifica) {
+    public void setfModifica(String fModifica) {
         this.fModifica = fModifica;
     }
 

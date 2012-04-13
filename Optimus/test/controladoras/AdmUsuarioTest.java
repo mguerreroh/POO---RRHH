@@ -6,9 +6,10 @@ package controladoras;
 
 import modelos.Rol;
 import modelos.Usuario;
-import controladoras.AdmUsuarios;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Calendar;
+import modelos.Bitacora;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -28,8 +29,9 @@ public class AdmUsuarioTest {
         RolTest test= new RolTest();
         test.crearRol();
         Rol rol_actual=test.getRolActual();
-               
-        Usuario user1 = new Usuario("09534044", "Zadith", "Guerrero", "Cordova", "zguerrero", "zguerrero", "zguerrero@", null, "cargo", rol_actual);
+        
+        Usuario user1 = new Usuario("09534044", "Zadith", "Guerrero", "Cordova", "zguerrero", "zguerrero", "zguerrero@", null, "cargo", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", ""));
+        System.out.println("*----- Inicio verificacion Usuario :" + user1.getUsuario() + " -----*");
         System.out.println("El Nombre del Usuario es: "    + user1.getNombre());
         System.out.println("El Ape. Pat. del Usuario es: " + user1.getApellidoPaterno());
         System.out.println("El Ape. Mat. del Usuario es: " + user1.getApellidoMaterno());
@@ -38,8 +40,13 @@ public class AdmUsuarioTest {
         System.out.println("El Correo del Usuario es: "    + user1.getCorreo());
         System.out.println("El F.ingreso del Usuario es: " + user1.getF_ingreso());
         System.out.println("El Cargo del Usuario es: "     + user1.getCargo());
+        System.out.println("El usuario quien lo creo es: " + user1.getBitacora().getUsCrea());
+        System.out.println("La fecha de creacion es: "     + user1.getBitacora().getfCrea());
+        System.out.println("*----- Fin verificacion Usuario -----*");
+        System.out.println("\n");
 
-        Usuario user2 = new Usuario("09534045", "Ricardo", "Guerrero", "Cordova", "rguerrero", "rguerrero", "rguerrero@", null, "cargo", rol_actual);
+        Usuario user2 = new Usuario("09534045", "Ricardo", "Guerrero", "Cordova", "rguerrero", "rguerrero", "rguerrero@", null, "cargo", rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", ""));
+        System.out.println("*----- Inicio verificacion Usuario :" + user2.getUsuario() + " -----*");
         System.out.println("El Nombre del Usuario es: "     + user2.getNombre());
         System.out.println("El Ape. Pat. del Usuario es: "  + user2.getApellidoPaterno());
         System.out.println("El Ape. Mat. del Usuario es: "  + user2.getApellidoMaterno());
@@ -48,20 +55,35 @@ public class AdmUsuarioTest {
         System.out.println("El Correo del Usuario es: "     + user2.getCorreo());
         System.out.println("El F.ingreso del Usuario es: "  + user2.getF_ingreso());
         System.out.println("El Cargo del Usuario es: "      + user2.getCargo());
+        System.out.println("El Rol del Usuario es: "        + user2.getRol_actual().getDescrip());
+        System.out.println("El usuario quien lo creo es: "  + user2.getBitacora().getUsCrea());
+        System.out.println("La fecha de creacion es: "      + user2.getBitacora().getfCrea());
+        System.out.println("*----- Fin verificacion Usuario -----*");
+        System.out.println("\n");
         
         //Inicio Test con Array
         ArrayList<Usuario> dbUsuario = new ArrayList<Usuario>();
         
-        dbUsuario.add(new Usuario("09534044",  "Zadith", "Guerrero", "Cordova", "zguerrero", "zguerrero", "zguerrero@", null, "cargo", rol_actual));
-        dbUsuario.add(new Usuario("09534045", "Ricardo", "Guerrero", "Cordova", "rguerrero", "rguerrero", "rguerrero@", null, "cargo", rol_actual));
+        dbUsuario.add(new Usuario("09534044",  "Zadith", "Guerrero", "Cordova", "zguerrero", "zguerrero", "zguerrero@", null, "cargo", rol_actual, new Bitacora(1,"Adm", "12/04/2012", "", "")));
+        dbUsuario.add(new Usuario("09534045", "Ricardo", "Guerrero", "Cordova", "rguerrero", "rguerrero", "rguerrero@", null, "cargo", rol_actual, new Bitacora(2,"Adm", "12/04/2012", "", "")));
         
         String usuarioBuscar="zguerrero";
         
+        System.out.println("Validando la existencia del Usuario " + usuarioBuscar);
+        System.out.println("------------------------------------------------------------");
         if (AdmUsuarios.buscaUsuario(usuarioBuscar, dbUsuario)){
             System.out.println("El usuario " + usuarioBuscar + ", ya existe!!!!");
         } else System.out.println("El usuario " + usuarioBuscar + ", no existe!!!!");
+        System.out.println("\n");
         
         String usuarioDatos="zguerrero";
+        
+        if (AdmUsuarios.buscaUsuario(usuarioDatos, dbUsuario)){
+            System.out.println("Los datos de usuario " + usuarioBuscar + ", son los siguientes:");
+            System.out.println("---------------------------------------------------------------");
+            AdmUsuarios.DatosUsuarioBuscado(usuarioDatos, dbUsuario);
+            System.out.println("\n");
+        }
         
 //        //DatosUsuarioBuscado
 //        if (AdmUsuarios.DatosUsuarioBuscado(usuarioDatos, dbUsuario)){

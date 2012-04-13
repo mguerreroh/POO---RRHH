@@ -20,7 +20,7 @@ public class AdmUsuarios {
 //    ArrayList<Usuario> dbUsuario;
 //    Usuario objUsuarioEncontrado;
     
-    ArrayList<Usuario> dbUsuario=new ArrayList<Usuario>() ;
+    static ArrayList<Usuario> dbUsuario=new ArrayList<Usuario>();
     
         public ArrayList<Usuario> getDbUsuario() {
         return dbUsuario;
@@ -33,32 +33,17 @@ public class AdmUsuarios {
           public void agregarUsuario(Usuario user) {
         dbUsuario.add(user);
     }
-        
       
-        public Usuario getUsu_nombre(String nombre) {
+    public Usuario getUsu_nombre(String nombre) {
         Usuario temp=null;
-          for (int i=0; i<dbUsuario.size();i++)
-           {
-                if (nombre.equals(dbUsuario.get(i).getNombre()))
-                    temp=dbUsuario.get(i);
-                    break;
+        for (int i=0; i<dbUsuario.size();i++){
+            if (nombre.equals(dbUsuario.get(i).getNombre()))
+                temp=dbUsuario.get(i);
+                break;
        }
-        
-         
             return temp;
     }
-        
-    //private ArrayList<Usuario> dbUsuarios = new ArrayList<Usuario>();
-    /*
-    private void simularTabla(){
-        Date fIngreso = new java.util.Date();
-        this.dbUsuarios.add(new Usuario("dni", "nombre"   , "apellidoPaterno", "apellidoMaterno", "usuario", "password", "correo", null, "cargo", "codigoRol"));
-        this.dbUsuarios.add(new Usuario("111", "Ricardo"  , "Giron"          , "S."             , "usuario", "password", "correo", null, "cargo", "codigoRol"));
-        this.dbUsuarios.add(new Usuario("222", "WOLFGANG" , "BOLDT "         , "apellidoMaterno", "usuario", "password", "correo", null, "cargo", "codigoRol"));
-        this.dbUsuarios.add(new Usuario("333", "Alex"     , "SEGOVIA "       , "apellidoMaterno", "usuario", "password", "correo", null, "cargo", "codigoRol"));
-        this.dbUsuarios.add(new Usuario("444", "Marcelino", "Guerrero"       , "apellidoMaterno", "usuario", "password", "correo", null, "cargo", "codigoRol"));
-        this.dbUsuarios.add(new Usuario("555", "Daniel"   , "Subauste"       , "apellidoMaterno", "usuario", "password", "correo", null, "cargo", "codigoRol"));
-    }*/
+
     /*<< - USUARIO - >>*/
     public boolean verificarUsuario(String user){
         if(user != null){
@@ -168,49 +153,18 @@ public class AdmUsuarios {
         return encuentra;
     }
     
-            public void DatosUsuarioBuscado(String user){
-        for(Usuario unUsuario:dbUsuario){
-            if(unUsuario.getUsuario().equals(user)){
-                objUsuarioEncontrado = new Usuario(unUsuario.getDni(), unUsuario.getNombre(), unUsuario.getApellidoPaterno(), 
-                        unUsuario.getApellidoMaterno(), unUsuario.getUsuario(), unUsuario.getPassword(), 
-                        unUsuario.getCorreo(), unUsuario.getF_ingreso(), unUsuario.getCargo(), unUsuario.getRol_actual());
-//                objUsuarioEncontrado = new Usuario(dni, nombre, apepat, apemat, usuario, password, correo, f_ingreso, cargo, rol)
-                break;
+    public static void DatosUsuarioBuscado(String usuario, ArrayList<Usuario> dbArray){
+        for(int x=0;x<dbArray.size();x++){
+            if(dbArray.get(x).getUsuario().equals(usuario)){
+                System.out.println("Nombre:    "  + dbArray.get(x).getNombre());
+                System.out.println("Ape. Pat.: "  + dbArray.get(x).getApellidoPaterno());
+                System.out.println("Ape. Mat.: "  + dbArray.get(x).getApellidoMaterno());
+                System.out.println("Usuario:   "  + dbArray.get(x).getUsuario());
+                System.out.println("Password:  "  + dbArray.get(x).getPassword());
+                System.out.println("Correo:    "  + dbArray.get(x).getCorreo());
+                System.out.println("F.ingreso: "  + dbArray.get(x).getF_ingreso());
+                System.out.println("Cargo:     "  + dbArray.get(x).getCargo());
             }
         }
-   }  
-    
-//    public static boolean DatosUsuarioBuscado(String usuario, ArrayList<Usuario> dbArray){
-//        boolean encuentra=false;
-//        for(Usuario unUsuario:dbArray){
-//            if(unUsuario.getUsuario().equals(usuario)){
-//                encuentra=true;
-//                System.out.println("Usuario encontrado:");
-//                System.out.println("------------------");
-//                System.out.println("Nombre --> " + unUsuario.getNombre());
-//                System.out.println("Ap. Paterno --> " + unUsuario.getApellidoPaterno());
-//                System.out.println("Ap. Materno --> " + unUsuario.getApellidoMaterno());
-//                System.out.println("Usuario --> " + unUsuario.getUsuario());
-//                System.out.println("Password --> " + unUsuario.getPassword());
-//                System.out.println("Correo --> " + unUsuario.getCorreo());
-//                System.out.println("Fecha Ingreso --> " + unUsuario.getF_ingreso());
-//                System.out.println("Cargo --> " + unUsuario.getCargo());
-//                System.out.println("Rol --> " + unUsuario.getRol_actual());
-//                break;
-//            }
-//        }
-//        return encuentra;
-//    }
-//    
-//    public void DatosUsuarioBuscado2(String user){
-//        for(Usuario unUsuario:dbUsuario){
-//            if(unUsuario.getUsuario().equals(user)){
-//                objUsuarioEncontrado = new Usuario(unUsuario.getDni(), unUsuario.getNombre(), unUsuario.getApellidoPaterno(), 
-//                        unUsuario.getApellidoMaterno(), unUsuario.getUsuario(), unUsuario.getPassword(), 
-//                        unUsuario.getCorreo(), unUsuario.getF_ingreso(), unUsuario.getCargo(), unUsuario.getRol_actual());
-////                objUsuarioEncontrado = new Usuario(dni, nombre, apepat, apemat, usuario, password, correo, f_ingreso, cargo, rol)
-//                break;
-//            }
-//        }
-//   }    
+    }  
 }
